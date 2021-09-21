@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+    color: rebeccapurple
+}
+</style>
+</head>
+<script>
+const x = -29
+const y = -2
+const a = ((35 * y - 25 * x) / 5 + 232)
+const b = ((8 * y / x + 5 * x / y - 43) * 6)
+const c = a % b
+// (35y-25x)/5+232 и (8*y/x+5*x/y – 43)*6)
+function vir1() {
+    const a = ((35 * y - 25 * x) / 5 + 232)
+    alert('Результат первого выражения: ' + a)
+}
+function vir2() {
+    const b = ((8 * y / x + 5 * x / y - 43) * 6)
+    alert('Результат второго выражения: ' + b)
+}
+function vir3() {
+    const c = a % b
+    alert('Остаток от деления первого выражения на второе: ' + c)
+    document.write('Остаток от деления первого выражения на второе: ', + c)
+}
+</script>
+<body>
+<h1>Задание 3</h1>
+<input type='button' value='Результат первого выражения' onclick='vir1()' />
+<input type='button' value='Результат второго выражения' onclick='vir2()' />
+<input type='button' value='Результат третьего выражения' onclick='vir3()' />
+</body>
+</html>

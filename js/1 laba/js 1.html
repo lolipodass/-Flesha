@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <script type='text/javascript'>
+        alert('Вас приветствует учебный центр');
+
+        x = prompt('Введите имя');
+        if (x == null) {
+            document.write("УХОДИ")
+        } else {
+            alert("Добро пожаловать на наши курсы, " + x)
+
+            if (confirm("Хотите стать Web-дизайнером?")) {
+                alert("Учите стили CSS")
+                document.write('Добрый день, ' + x);
+            } else {
+                alert("Упускаете время!");
+                document.write('ну и что тебе надо, ' + x + "?");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

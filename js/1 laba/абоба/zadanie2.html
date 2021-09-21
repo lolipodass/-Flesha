@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+color: rebeccapurple;
+}
+</style>
+</head>
+<script>
+const a = 10
+const b = 5
+const c = "10"
+const d = "5"
+function numbers() {
+ const z1 = a + b
+ alert(+ z1)
+}
+function strings() {
+ const z2 = c + d
+ alert(+z2)
+}
+function strnum() {
+ const z3 = c + b
+ const z4 = a + d
+ alert('"10"+5= ' + z3 + ' и 10+"5"= ' + z4) 
+ alert('Вывод: результатом сложения строки и числа всегда будет строка')
+}
+</script>
+<body>
+<h1>Задание 2</h1>
+<input type='button' value='10+5' onclick='numbers()' />
+<input type='button' value='"10"+"5"' onclick='strings()' />
+<input type='button' value='"10"+5 и 10+"5"' onclick='strnum()' />
+</body>
+</html>
