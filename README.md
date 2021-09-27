@@ -1,1 +1,1 @@
-All my lab for universite
+All my lab for university
