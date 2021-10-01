@@ -1,0 +1,17 @@
+
+h1,h2,h3,h4,h5,h6 {
+    color: rgb(187, 44, 192);
+font: 16px; 
+}
+ul[type="disc"] {
+    font: 18px "Times New Roman";
+    color: rgb(255, 0, 0);
+}
+ul[type="square"]{
+    font: 20px "Times New Roman";
+    color: rgb(255, 255, 0);
+}
+ul[type="circle"]{
+    font: 22px "Times New Roman";
+    color: rgb(43, 204, 91);
+}
