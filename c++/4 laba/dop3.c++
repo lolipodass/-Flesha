@@ -3,13 +3,13 @@
 using namespace std;
 int main()
 {
-    cout <<"vvedi a,b: ";
-    int a,b;
-    cin >> a >> b;
-    cout <<"vvedi p,g: ";
+    cout <<"vvedi razmer uchastka x,y: ";
+    int x,y;
+    cin >> x >> y;
+    cout <<"vvedi razmer pervogo doma x,y: ";
     int x1,x2;
     cin >> x1 >> x2;
-    cout <<"vvedi c,s: ";
+    cout <<"vvedi razmer vtorogo doma x,y:  ";
     int y1,y2;
     cin >> y1 >> y2;
 
@@ -19,7 +19,7 @@ int main()
     int genia = x2+y2;
     if (biba)
     {
-        /* code */
+        
     }
     
 
