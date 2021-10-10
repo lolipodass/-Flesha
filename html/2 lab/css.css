@@ -1,6 +1,6 @@
 
 h1,h2,h3,h4,h5,h6 {
-    color: rgb(187, 44, 192);
+    color: rgb(138, 44, 192);
 font: 16px; 
 }
 ul[type="disc"] {
@@ -13,5 +13,8 @@ ul[type="square"]{
 }
 ul[type="circle"]{
     font: 22px "Times New Roman";
-    color: rgb(43, 204, 91);
+    color: rgb(138, 143, 140);
+}
+td{
+    background-color:rgb(99, 99, 250);
 }

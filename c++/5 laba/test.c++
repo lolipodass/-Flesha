@@ -1,13 +1,16 @@
 #include <iostream>
+#include <vector>
+#include <string>
 
 using namespace std;
+
 int main()
 {
-    char your ='N';
-    cin>>your;
-if (your >'H')
-{
-cout <<"saki saki";
-}
-    
+    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
+
+    for (const string& word : msg)
+    {
+        cout << word << " ";
+    }
+    cout << endl;
 }

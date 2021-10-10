@@ -14,20 +14,27 @@ int main()
     int areaUch=x*y;
     int areaFirst=x1*x2;
     int areaSecond=y1*y2;
-    if (areaUch>areaFirst+areaSecond)
+    if  ((x<x1 || x<x2 || x<y1 || x<y2 ) || (y<x1 || y<x2 || y<y1 || y<y2))
     {
-        if (x==x1 || y==x1)
-            buffArea=areaFirst+x2;
-        else if (x==x2 || y==x2)
-            buffArea=areaFirst+x1;
-        else 
-            buffArea=areaFirst+x1+x2;            
-        
-        if (areaUch-buffArea>=areaSecond)
-            cout<<"vlese";
-        else 
-            cout<<"ne vlese";
+        cout <<"ur u realy idiot";
     }
-    else 
-        cout <<"bb lox";
+    else
+    {
+        if (areaUch>areaFirst+areaSecond)
+        {
+            if (x==x1 || y==x1)
+                buffArea=areaFirst+x2;
+            else if (x==x2 || y==x2)
+                buffArea=areaFirst+x1;
+            else 
+                buffArea=areaFirst+x1+x2;            
+             
+            if (areaUch-buffArea>=areaSecond)
+                cout<<"vlese";
+            else 
+                cout<<"ne vlese";
+        }
+        else 
+            cout <<"bb lox";
+    }
 }

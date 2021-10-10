@@ -1,4 +1,3 @@
 .vscode/
-#temp files
-/c++/*/tempCodeRunnerFile
-/c++/*/tempCodeRunnerFile.*
+#temp files from c++
+*.exe
