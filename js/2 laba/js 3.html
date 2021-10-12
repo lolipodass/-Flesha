@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: rgb(224, 93, 202);
+            border: solid 3px;
+        }
+        
+        td {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border: solid 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var a = +prompt("Введите a", ""),
+            b = +prompt("Введите b", "");
+        document.write("<table>");
+        document.write("<tbody>");
+        document.write("<tr><td>Радиус</td><td>Площадь круга</td><td>Длина окружности</td></tr>");
+        do {
+
+            document.write("<tr><td>" + a + "</td><td>" + Math.round(Math.PI * Math.pow(a, 2)) + "</td><td>" + Math.round(2 * a * Math.PI) + "</td><tr>");
+            a = +(a + 0.3).toFixed(1);
+        } while (a <= b);
+        document.write("</tbody>");
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

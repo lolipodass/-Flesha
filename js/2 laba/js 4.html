@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: rgb(224, 93, 202);
+            border: solid 3px;
+        }
+        
+        td {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border: solid 3px;
+        }
+    </style>
+    <script type="text/javascript">
+        x = Number(3.4);
+        z = Number(5);
+        document.write("<table>");
+        document.write("<tbody>");
+        document.write("<tr><td>Число</td><td>Метод</td><td>Результат</td><td>Описание</td></tr>");
+        document.write("<tr><td>" + x + "</td><td>toExponential</td><td>" + x.toExponential(1) + "</td><td>представляет число в экспоненциальной форме с одной цифрой после точки следует указывать </td><tr>");
+        document.write("<tr><td>" + z + "</td><td>toExponential</td><td>" + z.toExponential(1) + "</td><td>представляет число в экспоненциальной форме с одной цифрой после точки следует указывать</td><tr>");
+        document.write("<tr><td>" + x + "</td><td>toFixed</td><td>" + x.toFixed(2) + "</td><td>представляет число в форме с  двумями фиксированными цифрами после точки</td><tr>");
+        document.write("<tr><td>" + z + "</td><td>toFixed</td><td>" + z.toFixed(2) + "</td><td>представляет число в форме с  двумями фиксированными цифрами после точки</td><tr>");
+        document.write("<tr><td>" + x + "</td><td>toPrecision</td><td>" + x.toPrecision(1) + "</td><td>представляет число с заданным общим количеством значащих цифр;одну цифр до и после точки, следует указывать</td><tr>");
+        document.write("<tr><td>" + z + "</td><td>toPrecision</td><td>" + z.toPrecision(1) + "</td><td>представляет число с заданным общим количеством значащих цифр;одну цифр до и после точки, следует указывать</td><tr>");
+        document.write("<tr><td>" + x + "</td><td>toString</td><td>" + x.toString(8) + "</td><td>возвращает строковое представление числа в системе счисления с 8 основанием.</td><tr>");
+        document.write("<tr><td>" + z + "</td><td>toString</td><td>" + z.toString(8) + "</td><td>возвращает строковое представление числа в системе счисления с 8 основанием.</td><tr>");
+        document.write("</tbody>");
+        document.write("</table>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
