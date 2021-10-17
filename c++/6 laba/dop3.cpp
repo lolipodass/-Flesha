@@ -11,25 +11,17 @@ int main()
 
     cin>>num;
     if(num>=0)
-    {
         prev=0;
-    }
     else 
-    {
         prev=1;
-    }
     do
     {
         cin>>num;
 
         if(num>=0)
-        {
             zn=0;
-        }
         else 
-        {
             zn=1;
-        }
 
         if (zn!=prev)
         {

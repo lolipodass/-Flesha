@@ -1,0 +1,58 @@
+*::selection {
+    background-color: rgb(177, 223, 126);
+}
+
+h1 {
+    font: "Exo2" uppercase 45px bold;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 4px 4px rgb(216, 216, 216);
+}
+
+h2 {
+    font: "Lobster";
+    margin-top: 0.2rem;
+    margin-bottom: 1.2em;
+    text-indent: 25px;
+    text-align: left;
+}
+
+p,
+li {
+    font: "Caveant" 20px;
+    text-indent: 25px;
+    text-align: justify;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 200%;
+}
+
+p::first-letter {
+    font: 45px bold;
+    background-color: rgba(196, 67, 201, 0.808);
+    color: white;
+}
+
+ol {
+    list-style-type: none;
+    counter-reset: da;
+    list-style-position: inside;
+}
+
+li::before {
+    color: rgb(110, 132, 255);
+    counter-increment: da;
+    content: counter(da, upper-roman) ">_";
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url("../fonts/Caveat.woff");
+    font-family: "Exo2";
+    src: url("../fonts/Exo2.woff");
+    font-family: Comfortaa;
+    src: url("../fonts/Comfortaa.woff");
+    font-family: Caveat;
+    src: url("../fonts/Comfortaa.ttf");
+}
