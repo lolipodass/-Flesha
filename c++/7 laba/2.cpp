@@ -1,30 +1,36 @@
 #include <iostream>
 
 using namespace std;
+
+void check(short i)
+{
+    short wrtime =i,sh=0;
+    short n[3];
+    for (short g = 0; g < 3; g++)
+    {
+        n[g]=i%10;
+        i/=10;
+    }
+
+    if (n[0] !=n[1]&&n[1] !=n[2] && n[2] !=n[0])
+    {
+        cout<<wrtime<<" ";
+        sh++;
+        if (sh==10)
+        {
+            cout<<endl;
+            sh=0;
+        }
+    }
+}
+
+using namespace std;
 int main()
 {
 
-    int kol;
-    cout << "vvedi kolvo elementov ";
-    cin >> kol;
-    int *mas = new int[kol];
-    int *mas2 = new int[kol];
-    int sh=0;
-    for (int i = 0; i < kol; i++)
+    for (short i=100; i < 1000; i++)
     {
-        cin >> mas[i];
-
-        if (mas[i]>99 && mas[i]<1000)
-        {
-            mas2[sh]=mas[i];
-            sh++;
-        }
+        check(i);
     }
-
-    for (int i = 0; i < sh; i++)
-    {
-        cout << mas2[i]<<" ";
-    }
-
-    mas=mas2;
 }
+

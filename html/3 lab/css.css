@@ -1,5 +1,11 @@
+p::first-letter {
+    font: 45px bold;
+    background-color: rgba(196, 67, 201, 0.808);
+    color: white;
+}
+
 *::selection {
-    background-color: rgb(177, 223, 126);
+    background-color: rgb(177, 223, 226);
 }
 
 h1 {
@@ -28,10 +34,8 @@ li {
     line-height: 200%;
 }
 
-p::first-letter {
-    font: 45px bold;
-    background-color: rgba(196, 67, 201, 0.808);
-    color: white;
+p::selection {
+    background-color: rgb(177, 223, 126);
 }
 
 ol {
@@ -43,7 +47,7 @@ ol {
 li::before {
     color: rgb(110, 132, 255);
     counter-increment: da;
-    content: counter(da, upper-roman) ">_";
+    content: counter(da, upper-roman) " >_< ";
 }
 
 @font-face {
