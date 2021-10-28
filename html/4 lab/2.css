@@ -1,14 +1,21 @@
 tr {
-    background-color: rgb(111, 189, 129);
     font: bold 11px arial;
-    color: #e5e;
+    color: rgb(210, 221, 59);
 }
 
 table {
     empty-cells: hide;
-    border: 2px inset rgb(114, 139, 114);
 }
 
-td {
-    border-radius: 10px;
+th{
+    background-color: rgb(0, 94, 235);
+
+    border: 2px solid black;
+}
+
+td{
+    border: 2px dotted black;
+}
+span{
+color: rgb(29, 251, 0);
 }
