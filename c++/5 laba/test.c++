@@ -1,16 +1,36 @@
 #include <iostream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
 int main()
 {
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
 
-    for (const string& word : msg)
+    int arg[10]={0};
+    for (int i=0; i<10;i++)
     {
-        cout << word << " ";
+        cin>> arg[i];
     }
-    cout << endl;
+    int min=arg[0],ind=0;
+   for(int b=0;b<5;b++) 
+   {
+        for (int i=1; i<10-b;i++)
+        {
+            if(arg[i]<min)
+            {
+                min=arg[i];
+                ind=i;
+            }
+        }
+        
+        for(int i=ind;i<10;i++)
+        {
+            arg[i]=arg[i+1] ;
+        }
+        min=arg[0];
+    }
+    cout<<endl;
+    //-21 4 -32 45 98 38 98
+    for (int i=0; i<5;i++){
+        cout << arg[i]<<" ";
+    }
 }
