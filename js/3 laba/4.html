@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <style type="text/css">
+        table {
+            border-width: 2px;
+            border-style: solid;
+            border-collapse: collapse;
+            width: 24%;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        th,
+        td {
+            border-color: rgb(156, 101, 101);
+            border-width: 1px;
+            border-style: solid;
+            border-collapse: collapse;
+            font-family: Arial;
+            padding: 10px;
+        }
+        
+        th {
+            background-color: rgb(164, 226, 164);
+        }
+        
+        td {
+            background-color: rgb(29, 205, 236);
+        }
+    </style>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th> Год </th>
+            <script>
+                var a = new Date();
+                var res = a.getDay();
+                switch (res) {
+                    case 0:
+                        x = "Воскресенье"
+                    case 1:
+                        x = "Понедельник";
+                        break;
+                    case 2:
+                        x = "Вторник";
+                        break;
+                    case 3:
+                        x = "Среда";
+                        break;
+                    case 4:
+                        x = "Четверг";
+                        break;
+                    case 5:
+                        x = "Пятница";
+                        break;
+                    case 6:
+                        x = "Суббота";
+                        break;
+                    default:
+                        x = "Неверные данные";
+                }
+                var res1 = a.getMonth();
+                switch (res1) {
+                    case 0:
+                        z = "Январь";
+                        break;
+                    case 1:
+                        z = "Февраль";
+                        break;
+                    case 2:
+                        z = "Март";
+                        break;
+                    case 3:
+                        z = "Апрель";
+                        break;
+                    case 4:
+                        z = "Март";
+                        break;
+                    case 5:
+                        z = "Июнь";
+                        break;
+                    case 6:
+                        z = "Июль";
+                        break;
+                    case 7:
+                        z = "Август";
+                        break;
+                    case 8:
+                        z = "Сентябрь";
+                        break;
+                    case 9:
+                        z = "Октябрь";
+                        break;
+                    case 10:
+                        z = "Ноябрь";
+                        break;
+                    case 11:
+                        z = "Декабрь";
+                        break;
+                    default:
+                        z = "Неверные данные";
+                        break;
+                }
+                year = a.getFullYear();
+                hour = a.getHours();
+                min = a.getMinutes();
+                sec = a.getSeconds();
+                document.write("<td>" + (year) + "</td></tr>");
+                document.write("<tr><th> Месяц </th><td>" + (z) + "</td></th>");
+                document.write("<tr><th> День </th><td>" + (x) + "</td></th>");
+                document.write("<tr><th> Час </th><td>" + (hour) + "</td></th>");
+                document.write("<tr><th> Минута </th><td>" + (min) + "</td></th>");
+                document.write("<tr><th> Секунда </th><td>" + (sec) + "</td></th>");
+            </script>
+
+    </table>
+</body>
+
+</html>

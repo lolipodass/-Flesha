@@ -5,20 +5,20 @@ using namespace std;
 
 double func(double x)
 {
-    double result =x*x*x-3;
+    double result =x*x*x+3;
     return result;
 }
 
 double func2(double x)
 {
-    double result =x*x*x+x-3;
+    double result =x*x*x+3*x-1;
     return result;
 }
 
 
 void first()
 {
-    int a=1,b=3,n=200;
+    int a=3,b=6,n=200;
     double h=0.001;
     double s=0;
     int i=0;
@@ -33,7 +33,7 @@ void first()
 
 void second()
 {
-    int a=1,b=3,n=200;
+    int a=3,b=6,n=200;
     double h=0.005;
     double s=0;
     double x=a+2*h;
@@ -53,8 +53,8 @@ void second()
 
 void third()
 {
-    double a=0;
-    double b=3;
+    double a=-100;
+    double b=100;
     double e=1e-5;
     double x=0;
     while (abs(a-b)>2*e)
@@ -74,6 +74,6 @@ void third()
 
 int main()
 {
-    
+    third();
 
 }

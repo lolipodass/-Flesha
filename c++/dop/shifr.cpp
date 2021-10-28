@@ -7,8 +7,10 @@ using namespace std;
 
 int main()
 {
-    
-    int sdvig=20;
+    //generate key for crypting
+    srand(time(NULL));
+    int sdvig=0;
+
 
 //files link
     char name[100];
@@ -35,14 +37,19 @@ int main()
     bool state=0;
     cin>>state;
 
-
+//надежда что файл меньше 200 символов
     char line[200];
     
-    if (state)
 //encrypt
+    if (state)
     {
+        int key=rand();
+        cout <<"ключ для расшифровки "<<key;
+        srand(key);
+
         fin.getline(line,200);
         for(int i=0;i<200;i++){
+            sdvig=rand();
             line[i] +=sdvig;
         }
         fout<<line;
@@ -52,8 +59,15 @@ int main()
 //decrypt
     else
     {
+//key
+        int key;
+        cout <<"Введите ключ";
+        cin >>key;
+        srand(key);
+
         fin.getline(line,200);
         for(int i=0;i<200;i++) {
+            sdvig=rand();
             line[i] -=sdvig;
         }
         fout<<line;

@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    double first=1,second=1;
+    double first=20,second=25;
     for (short i = 0; i < 3; i++)
     {
         second/=2;

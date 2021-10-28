@@ -13,7 +13,7 @@ int main()
         cin >>q;
         if (q%2==0)
         {
-            shit++;
+            shit+=q;
         }
         
     }

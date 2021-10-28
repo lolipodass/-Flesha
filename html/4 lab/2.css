@@ -1,5 +1,14 @@
 tr {
-    background-color: rgb(63, 189, 91);
+    background-color: rgb(111, 189, 129);
     font: bold 11px arial;
     color: #e5e;
+}
+
+table {
+    empty-cells: hide;
+    border: 2px inset rgb(114, 139, 114);
+}
+
+td {
+    border-radius: 10px;
 }
