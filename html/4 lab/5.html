@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> form</form>
+    </title>
+    <meta charset="UTF-8">
+</head>
+<style type="text/css">
+    p {
+        padding: 4px;
+    }
+    
+    form {
+        background-color: indigo;
+        color: white;
+        font-size: 1.2em;
+        text-align: justify;
+        font-family: Arial;
+    }
+    
+    .label {
+        display: inline-block;
+        width: 10em;
+        vertical-align: top;
+        text-align: left;
+        margin-right: 3px;
+    }
+    
+    input,
+    #otkuda {
+        margin-left: 33px;
+        vertical-align: baselin
+    }
+    
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: navy;
+        box-shadow: 0 0 4px rgb(131, 131, 131);
+        color: white;
+        margin-bottom: 12px;
+        border-radius: 3px;
+        width: 12%;
+        height: 25px;
+    }
+    
+    input[type="text"],
+    input[type="Email"] {
+        background-color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, 1);
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, .75);
+        border-radius: 5px;
+        height: 21px;
+        width: 225px;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+        background-color: rgb(82, 82, 82);
+        color: rgb(179, 255, 0);
+        height: 21px;
+    }
+</style>
+
+<body>
+    <form>
+        <h1> Регистрация постоянного клиента </h1>
+        <p>
+            <label for="surname" class="label"> Фамилия: </label>
+            <input type="text" id="surname">
+        </p>
+        <p>
+            <label for="name" class="label"> Имя: </label>
+            <input type="text" id="name">
+        </p>
+        <p>
+            <laber for="tname" class="label"> Отчество: </laber>
+            <input type="text" id="tname">
+        </p>
+        <p>
+            <label for="age" class="label"> Возраст: </label>
+            <input type="text" id="age">
+        </p>
+        <p>
+            <label for="sex" class="label"> Пол: </label>
+            <input type="checkbox" id="sex"> Мужской
+            <input type="checkbox" id="sex"> Женский
+        </p>
+        <p>
+            <label for="email" class="label"> Email: </label>
+            <input type="Email" id="email">
+        </p>
+        <p>
+            <label for="country" class="label"> Страна: </label>
+            <input type="text" id="country">
+        </p>
+        <p>
+            <label for="otkuda" class="label"> Откуда вы узнали о нас? </label>
+            <select id="otkuda">
+<option disabled> Выберите вариант </option>
+<option> Рекомендация от знакомых </option>
+<option> Реклама в интернете </option>
+<option> Медиа-ресурсы </option>
+<option> Другой источник </option>
+</select>
+        </p>
+        <p>
+            <label for="date" class="label"> Дата заполнения </label>
+            <input type="date" name="">
+        </p>
+
+        <p> <label for="otm" class="label"> </label>
+            <input id="otm" type="submit" value="Регистрация">
+            <input type="reset" id="otm" value="Отмена" style="margin-left: 0px;">
+        </p>
+    </form>
+</body>
+
+</html>

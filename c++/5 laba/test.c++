@@ -6,11 +6,13 @@ using namespace std;
 
 int main()
 {
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-
-    for (const string& word : msg)
-    {
-        cout << word << " ";
-    }
-    cout << endl;
+        char i='1';
+        if (i==(char)0||i=='1'||i==(char)2||i==(char)3||i==(char)4||i==(char)5||i==(char)6||i==(char)7||i==(char)8||i==(char)9)
+        {
+            cout<<"xyu";
+        }
+        else
+        {
+            cout<<"sus";
+        }
 }
