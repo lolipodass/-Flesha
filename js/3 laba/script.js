@@ -1,6 +1,5 @@
 "use strict";
 
-
 let acc = [4];
 acc[0] = 6 * Math.PI * Math.PI + 3 * Math.exp(8);
 acc[1] = 2 * Math.cos(4) + Math.cos(12) + 8 * Math.exp(9);
@@ -11,7 +10,6 @@ acc[3] = 2 * Math.tan(5) + 6 * Math.PI + Math.sqrt(12);
 let min = acc[0],
     max = acc[0];
 
-
 for (let da of acc) {
     if (da < min) {
         min = da;
@@ -19,8 +17,10 @@ for (let da of acc) {
     if (da > max) {
         max = da;
     }
-}
 
+}
+console.log(acc.indexOf(min), acc.indexOf(max));
+console.log(acc);
 console.log(min, max);
 
 
@@ -58,5 +58,7 @@ stroka = stroka.toUpperCase();
 console.log("В верхнем регистре = ", stroka);
 stroka = stroka.toLowerCase();
 console.log("В нижнем регистре = ", stroka);
+stroka = stroka.concat(stroka + stroka.toUpperCase())
+console.log(stroka);
 stroka = stroka.replace(stroka, "К.А.Л")
 console.log(stroka);
