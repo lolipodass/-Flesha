@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title> Лабораторная работа 10 </title>
+	<link href="768.css" rel="stylesheet" media="(width: 760px)">
+
+	<style type="text/css">
+		@import url(480.css) (width: 480px);
+
+		* {
+			font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+
+		section {
+			display: flex;
+			flex-flow: row wrap;
+			align-content: space-between;
+			justify-content: center;
+			align-items: stretch;
+		}
+
+		header {
+			background-color: rgb(192, 255, 203);
+			height: 100px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-top: 20px;
+			font-size: 33px;
+			border: 2px solid rgb(140, 255, 184);
+		}
+
+		h1 {
+			text-align: center;
+			color: rgb(63, 63, 63);
+			margin: 0;
+			padding-top: 1vh;
+		}
+
+		article {
+			margin: 15px;
+			padding: 10px;
+			background-color: rgb(120, 252, 230);
+			flex: 1 1 300px;
+			border: 2px solid rgb(224, 153, 153);
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		.second {
+			background-color: rgb(135, 223, 250);
+		}
+
+		figure img {
+			height: 250px;
+			width: 500px;
+			flex: 1 1 300px;
+			border: 2px solid rgb(139, 139, 238);
+		}
+
+		figure figcaption {
+			text-align: center;
+			font-size: 33px;
+			color: rgb(179, 121, 121);
+		}
+
+		@media (width: 1280px) {
+			figure figcaption {
+				font-size: 2rem;
+			}
+
+			figure img {
+				height: 15rem;
+				width: 30rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1> HTML5 и CSS </h1>
+	</header>
+	<section>
+		<article class="vir">
+			<h2> HTML5 </h2>
+			<p> HTML5 — язык для структурирования и представления содержимого всемирной паутины. Элементы HTML являются
+				строительными блоками HTML страниц. С помощью HTML разные конструкции, изображения и другие объекты
+				такие как интерактивная веб-формы могут быть встроены в отображаемую страницу. Элементы HTML выделяются
+				тегами, записанными с использованием угловых скобок. </p>
+		</article>
+		<article class="vir">
+			<h2> Совмещённое использование </h2>
+			<p> Для объединения - внешнее, с помощью тега style, внутреннее подключение CSS к html-файлу. Применение CSS
+				к документам HTML основано на принципах наследования и каскадирования. Принцип наследования заключается
+				в том, что свойства CSS, объявленные для элементов-предков, почти всегда наследуются
+				элементами-потомками. Принцип каскадирования применяется в случае, когда какому-то элементу HTML
+				одновременно поставлено в соответствие более одного правила CSS. </p>
+		</article>
+		<article class="vir">
+			<h2> CSS </h2>
+			<p> CSS — формальный язык описания внешнего вида документа, написанного с использованием языка разметки. CSS
+				используется создателями веб-страниц для задания цветов, шрифтов, стилей, расположения отдельных блоков
+				и других аспектов представления внешнего вида этих веб-страниц. </p>
+		</article>
+	</section>
+	<section>
+		<article class="second">
+			<h2> Flex-box вёрстка, flex-контейнер </h2>
+			<p> Flexbox-верстка — разметка макетов веб-страниц, которая позволяет
+				автоматически настраивать ширину элементов, находящихся внутри flex-контейнера. Для применения данного
+				способа разметки следует учитывать разделение применяемых свойств на свойства flex-контейнера и свойства
+				flex-элемента. С помощью display: flex; осуществляется преобразование HTMLэлемента в flex-контейнер, а
+				элементы находящийся внутри него в flex элементы. По умолчанию flex-элементы помещаются друг за другом в
+				одной
+				строке. Свойство flex-flow позволяет выбрать направление отображения
+				элементов в контейнере, а также указать их перенос на следующую строку.
+				Первое значение определяет направление, а второе перенос на следующую
+				строку </p>
+
+		</article>
+		<article class="second">
+			<h2> flex-элемент </h2>
+			<p> Для flex-элементов основным свойством являет flex, которое обеспечивает их гибкость и управляет шириной,
+				что позволяет создавать «гибкие» колонки или изменять их ширину в соответствии с размером контейнера,
+				даже если размер неизвестен или меняется динамически. Первое значение свойства flex — число параметра
+				flex-grow, которое указывает на
+				относительную ширину flex-элемента, которая определяет во сколько
+				размеры элементов отличаются между собой. Второе значение — число
+				свойства flex-shrink, которое определяет насколько flex-элемент может быть
+				сжат, если суммарная ширина элементов больше ширины контейнера.
+				Последнее значение — свойство flex-basis, которое определяет базовую ширину flex-элемента </p>
+		</article>
+	</section>
+	<section>
+		<figure>
+			<img src="https://wp-kama.ru/wp-content/uploads/2017/02/flexbox-info.png">
+			<figcaption> Структура</figcaption>
+		</figure>
+		<figure>
+			<img src="https://itchief.ru/assets/images/456/css-flexbox-elements.png">
+			<figcaption> Пример контейнера </figcaption>
+		</figure>
+	</section>
+
+</body>
+
+</html>

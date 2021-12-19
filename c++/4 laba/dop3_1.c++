@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 
-    setlocale(LC_CTYPE, "Russian");
     char your, probel=' ';
     cout << "Введите число: ";
     cin >> your;

@@ -1,0 +1,32 @@
+div {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    border: 3px red double;
+    box-sizing: border-box;
+    background-origin: padding-box;
+}
+
+div:nth-child(1) {
+    background: linear-gradient(180deg, blue, red) padding-box;
+}
+
+div:nth-child(2) {
+    background: repeating-linear-gradient(45deg, red 0px, red 10px, blue 10px, blue 20px) padding-box;
+}
+
+div:nth-child(3) {
+    background: radial-gradient(rgb(214, 228, 22), rgb(19, 87, 2)) padding-box;
+}
+
+div:nth-child(4) {
+    background: repeating-radial-gradient(yellow 0px, yellow 10px, green 10px, green 20px) padding-box;
+}
+
+div:nth-child(5) {
+    background: radial-gradient(yellow, green, transparent 85%) padding-box, linear-gradient(blue, rgb(255, 0, 255));
+}
+
+div:nth-child(6) {
+    background: linear-gradient( 90deg, yellow, green, transparent 75%) padding-box, linear-gradient(black, white 60%, blue 80%, rgb(255, 0, 255) 95%);
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Лабораторная работа 10 </title>
+
+        <style type="text/css">
+                .flex {
+                        display: flex;
+                }
+
+                a {
+                        display: block;
+                        float: left;
+                        text-decoration: none;
+                        border: 10px solid #5da554;
+                        background-color: #5da554;
+                        border-radius: 30px;
+                        color: white;
+                        width: 150px;
+                        text-align: center;
+                        margin-top: 5px;
+                        font-size: 18px;
+                        font-style: italic;
+                        z-index: 2;
+                }
+
+                a:hover {
+                        color: #cd6deb;
+                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.288);
+                }
+
+                .dropdown {
+
+                        background-color: #4e45dd;
+                        display: none;
+                        width: 180px;
+                        font-size: 32px;
+                        text-align: center;
+
+                }
+
+                .dropdown:hover {
+                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.288);
+                }
+
+                .dropdown:hover .content {
+                        display: block;
+
+                }
+
+                .content {
+                        display: none;
+                        z-index: 2;
+                }
+
+                .content.da {
+                        display: flex;
+                        flex-direction: column;
+                        z-index: 2;
+                }
+
+                @media (max-width: 560px) {
+                        .dropdown {
+                                display: inline-block;
+                        }
+
+                        .content.da {
+                                display: none;
+                        }
+
+                        .flex {
+                                flex-direction: column;
+                        }
+
+                }
+
+                /*!second */
+
+
+                .second {
+                        border: #4e45dd solid 1px;
+                        width: auto;
+                }
+
+                article {
+                        margin: 15px;
+                        padding: 10px;
+                        border: 2px solid darkred;
+                        height: 500px;
+                        border: 1px solid black;
+                }
+
+                .sone {
+                        flex: 1 1 50px;
+                }
+
+                .stwo {
+                        flex: 7 1 600px;
+                }
+
+                video source {
+                        margin-left: 20%
+                }
+
+                figure {
+                        display: inline-block;
+                        margin-left: 100px;
+                }
+        </style>
+
+</head>
+
+<body>
+        <div class="flex">
+                <nav>
+                        <div class="dropdown">
+                                Навигация
+                                <div class="content">
+                                        <a href="../4 laba/3.html">Форма</a>
+                                        <a href="../4 laba/5.html">Шахматная доска</a>
+                                        <a href="../6 laba/2.html">Фотогалерея</a>
+                                </div>
+                        </div>
+                        <div class="content da">
+                                <a href="../4 laba/3.html">Форма</a>
+                                <a href="../4 laba/5.html">Шахматная доска</a>
+                                <a href="../6 laba/2.html">Фотогалерея</a>
+                        </div>
+                </nav>
+
+                <div class="second">
+                        <video width="300px" height="170px" controls="controls" preload="auto">
+                                <source src="C:\idm\Video\【太鼓の達人】 彁 （Movie-Fiz）.mp4" type="video/mp4">
+                        </video>
+                        <video width="300px" height="170px" controls="controls" preload="auto">
+                                <source src="C:\idm\Video\anime-girl-coffee-shop-moewalls.com.mp4" type="video/mp4">
+                        </video>
+                        <video width="300px" height="170px" controls="controls" preload="auto">
+                                <source src="C:\idm\Video\Forest - 42129.mp4" type="video/mp4">
+                        </video>
+                        <figure>
+                                <figcaption style="margin-left: 9%;"> Crysytal & МОЁТ</figcaption>
+                                <audio controls="controls" preload="auto">
+                                        <source src="C:\idm\Video\【太鼓の達人】 彁 （Movie-Fiz）.mp4" type="audio/mp3">
+                                </audio>
+                        </figure>
+                        <figure>
+                                <figcaption style="margin-left: 9%;"> Ты ослеп</figcaption>
+                                <audio controls="controls" preload="auto">
+                                        <source src="C:\idm\Video\anime-girl-coffee-shop-moewalls.com.mp4"
+                                                type="audio/mp3">
+                                </audio>
+                        </figure>
+                </div>
+        </div>
+
+</body>
+
+</html>

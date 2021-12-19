@@ -1,0 +1,50 @@
+nav {
+    display: flex;
+}
+
+.space {
+    height: 30px;
+}
+
+ul {
+    display: flex;
+    position: fixed;
+    display: inline;
+    left: 45%;
+    border: #ee7b7b 10px solid;
+    margin: 0px;
+    padding: 0px;
+    z-index: 2;
+}
+
+li a {
+    display: inline-block;
+    background-color: #f4f4f4;
+    text-decoration: none;
+    border: #ee7b7b 10px;
+    font-size: 32px;
+    color: rgb(92, 90, 90);
+}
+
+li {
+    border: rgb(7, 230, 7) 10px;
+    display: inline-block;
+    border-left: #ffa3e0 10px;
+    list-style: none;
+}
+
+a:link {
+    color: #ff0000;
+}
+
+a:visited {
+    color: #ffa3e0;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a:active {
+    color: burlywood;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Данные о пользователе</legend>
+            Факультет: <br />
+            <textarea name="special" cols="20" rows="3"></textarea>
+            <p>Фамилия:</p>
+            <input type='text' name='surname' />
+            <p>Имя:</p>
+            <input type='text' name='name' /><br />
+            <p>Укажите ваш пол:</p>
+            <input type='radio' name='sex' value='m' /> Мужской<br />
+            <input type='radio' name='sex' value='w' /> Женский
+        </fieldset>
+
+        <fieldset>
+            <legend> Анкета: </legend>
+            <strong>Специальность</strong>
+            <select name="spec">
+                <option value="poit">ПОИТ</option>
+                <option value="isit">ИСиТ</option>
+                <option value="poibms">ПОИБМС</option>
+                <option value="devi">ДЭВИ</option>
+            </select>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <strong>Курс:
+                <br/>
+                <input type="radio" name="curs" value="1">1
+                <input type="radio" name="curs" value="2">2
+                <input type="radio" name="curs" value="3">3
+                <input type="radio" name="curs" value="4">4
+                <br/>
+                Предметы:
+                <br/>
+                <input type="checkbox" name="ОИТ" >ОИТ
+                <input type="checkbox" name="ОАП" >ОАП
+                <input type="checkbox" name="История" >История
+                <input type="checkbox" name="Физика" >Физика
+                <input type="checkbox" name="Математика" >Математика
+            </strong>
+            <br/>
+            <br/>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </fieldset>
+    </form>
+
+    <button onclick="task2()" class="but">Напечатать</button>
+
+    <br>
+    <form>
+        <fieldset>
+            <select class="sec"></select>
+        </fieldset>
+    </form>
+
+    <script src="1.js"></script>
+</body>
+
+</html>

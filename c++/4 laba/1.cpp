@@ -5,9 +5,8 @@ using namespace std;
 int main()
 {
 
-    setlocale(LC_CTYPE, "Russian");
     char your, probel=' ';
-    cout << "Введите число: ";
+    cout << "Bвдитe чиcлo: ";
     cin >> your;
     cout << setw(33)<<setfill(probel)<<probel;
     cout<<setw(7) << setfill(your)<< your<<endl;

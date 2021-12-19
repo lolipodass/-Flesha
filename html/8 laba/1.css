@@ -1,0 +1,39 @@
+nav {
+    float: left;
+}
+
+ul {
+    position: relative;
+    top: 100px;
+    display: block;
+    border: #ee7b7b 10px;
+}
+
+a:link {
+    color: #ff0000;
+}
+
+a:visited {
+    color: #ffa3e0;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a:active {
+    color: burlywood;
+}
+
+li a {
+    display: inline-block;
+    background-color: #f4f4f4;
+    text-decoration: none;
+    font-size: 32px;
+    color: rgb(92, 90, 90);
+}
+
+li {
+    border: rgb(7, 230, 7) 1px;
+    list-style: none;
+}

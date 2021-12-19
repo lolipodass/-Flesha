@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title> Лабораторная работа 9</title>
+</head>
+<style type="text/css">
+    * {
+        font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .button {
+        display: inline-block;
+        height: 38px;
+        padding: 0 20px;
+        color: #555;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 38px;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: transparent;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .button:hover {
+        color: #333;
+        border-color: #888;
+        outline: 0;
+    }
+
+    .button.button-primary {
+        color: #FFF;
+        background-color: #33C3F0;
+        border-color: #33C3F0;
+    }
+
+    .button.button-primary:hover {
+        color: #FFF;
+        background-color: #1EAEDB;
+        border-color: #1EAEDB;
+    }
+
+
+    .grid {
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 1fr;
+        grid-template-rows: 1fr 1.5fr 0.5fr;
+        gap: 10px;
+        grid-template-areas:
+            "nav header header"
+            "nav content aside"
+            "fot fot fot";
+        margin-left: 80px;
+        margin-top: 35px;
+        margin-bottom: 25px;
+        align-items: stretch;
+        justify-content: center;
+        text-align: center;
+        border: #1EAEDB 5px solid;
+    }
+
+    .grid>div {
+        border: #888 solid 3px;
+    }
+</style>
+
+<body>
+    <div class="grid">
+        <div style="grid-area:nav;">
+            <a href="lab9task1.html" class="button button-primary">Задание №1</a>
+            <a href="lab9task2.html" class="button button-primary">Задание №2 </a>
+            <a href="lab9task3.html" class="button button-primary">Задание №3 </a>
+
+        </div>
+        <div style="grid-area:header;font-weight: bold;font-size: 20px;">
+            Grid-верстка — это разбиение макета на области. Сетка (grid)
+            представляет собой совокупность пересекающихся горизонтальных и
+            вертикальных линий, делящих пространство grid-контейнера на области
+            сетки, в которые могут быть помещены содержимое элементов сетки.
+        </div>
+
+        <div style="grid-area: content;">
+            <p> Грид-ячейка (grid cell) - наименьшая единица измерения грида, концептуально похожая на ячейку
+                таблицы. Как мы видели в предыдущих примерах, едва грид определён для родительского элемента,
+                дочерние элементы автоматически размещаются в каждой ячейке нашего заданного грида </p>
+            <p>Элементы могут занимать одну или несколько ячеек внутри строки или колонки, и подобное поведение
+                создаёт грид-область (grid area). Грид-области должны быть перпендикулярными, - невозможно
+                создать
+                область, например, в форме буквы </p>
+        </div>
+
+        <div class="aside">
+            Явный грид — это грид, который вы определяете в grid-template-rows, grid-template-colums и в
+            grid-template-areas.Неявные гриды автоматически генерируются самим грид-контейнером всякий раз когда
+            грид-элементы располагаются за пределами явного грида. Контейнер генерирует неявные грид треки,
+            добавляя
+            неявные строки в грид.
+        </div>
+
+        <div style="grid-area:fot">
+            Использованные ресурсы: wikipedia.com, media.com, developer.mozila.com, теория Лабораторной
+            работы
+            №9 <br />
+            Тема - «Grid-верстка»
+        </div>
+    </div>
+
+
+</body>
+
+</html>

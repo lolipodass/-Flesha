@@ -1,0 +1,59 @@
+div {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+span,
+button,
+big {
+    background-color: #ffa500;
+    border: #ff4500 5px solid;
+}
+
+.p1 {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    border: #FF7F50 5px solid;
+}
+
+.p2 {
+    border-radius: 400px / 200px;
+    box-shadow: inset 4px 4px 8px 12px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.p3 {
+    background-color: #FF6347
+}
+
+#R {
+    border: 10px outset #ff0000;
+}
+
+#G {
+    border: 10px dashed rgb(0, 255, 42);
+}
+
+#B {
+    border: 10px dotted rgb(0, 4, 247);
+}
+
+#C {
+    border: 10px double rgb(132, 207, 236);
+}
+
+#M {
+    border: 10px groove rgb(255, 0, 234);
+}
+
+#Y {
+    border: 10px inset rgb(251, 255, 0);
+}
+
+#K {
+    border: 10px solid rgb(0, 0, 0);
+}

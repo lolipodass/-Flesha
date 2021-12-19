@@ -1,0 +1,27 @@
+li {
+    list-style: none;
+    background: url(../images/black-circle.png) no-repeat 0px 3px border-box;
+    background-size: 5px;
+    padding-left: 12px;
+}
+
+body {
+    background-color: aliceblue;
+    background: url(../images/spooky_pup.gif) scroll no-repeat right 0px;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+img {
+    float: left;
+    width: 20%;
+    height: 10%;
+}
+
+.fa {
+    float: right;
+    width: 10%;
+    height: 10%;
+}

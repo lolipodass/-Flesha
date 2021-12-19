@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 10</title>
+    <style type="text/css">
+        a {
+            display: block;
+            float: left;
+            text-decoration: none;
+            border: 10px solid #5da554;
+            background-color: #5da554;
+            border-radius: 30px;
+            color: white;
+            width: 150px;
+            text-align: center;
+            margin-top: 5px;
+            font-size: 18px;
+            font-style: italic;
+            z-index: 2;
+        }
+
+        a:hover {
+            color: #cd6deb;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.288);
+        }
+
+        .dropdown {
+
+            background-color: #4e45dd;
+            display: none;
+            width: 180px;
+            font-size: 32px;
+            text-align: center;
+            position: absolute;
+
+        }
+
+        .dropdown:hover {
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.288);
+        }
+
+        .dropdown:hover .content {
+            display: block;
+
+        }
+
+        .content {
+            display: none;
+            z-index: 2;
+        }
+
+        .content.da {
+            display: inline;
+            z-index: 2;
+        }
+
+        .nec {
+            display: none;
+        }
+
+        @media (max-width: 560px) {
+            .dropdown {
+                display: inline-block;
+            }
+
+            .content.da {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="dropdown">
+            Навигация
+            <div class="content">
+                <a href="../4 laba/3.html">Форма</a>
+                <a href="../4 laba/5.html">Шахматная доска</a>
+                <a href="../6 laba/2.html">Фотогалерея</a>
+            </div>
+        </div>
+
+        <div class="content da">
+            <a href="../4 laba/3.html">Форма</a>
+            <a href="../4 laba/5.html">Шахматная доска</a>
+            <a href="../6 laba/2.html">Фотогалерея</a>
+        </div>
+    </nav>
+</body>
+
+</html>
