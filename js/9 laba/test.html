@@ -1,0 +1,140 @@
+</script>
+</body>
+
+</html>
+<html>
+
+<head>
+    <style>
+        div {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label><input type='radio' name='choice' value='1' /> y=x²</label>
+        <label><input type='radio' name='choice' value='2' /> y=x³</label>
+        <label><input type='radio' name='choice' value='3' /> y=sin(x)</label>
+        <label><input type='radio' name='choice' value='4' /> y=cos(x)</label>
+        <br /><span>Выберите цвет:</span>
+        <input id="colors" type="color" /><br />
+        <input type="button" value="График" onclick="graph()">
+        <br />
+    </form>
+    <p></p>
+    <pre style="display:none">
+</pre>
+
+    <script type="text/javascript">
+        function graph() {
+            let val = Number(document.forms[0].choice.value);
+            let color = document.getElementById('colors').value;
+            switch (val) {
+                case 1:
+                    x2(1000, 700, color)
+                    break;
+                case 2:
+                    x3(1000, 700, color);
+                    break;
+                case 3:
+                    sinX(1000, 700, color);
+                    break;
+                case 4:
+                    cosX(1000, 700, color);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        function x2(width, height, color) {
+            document.getElementsByTagName('pre')[0].style.display = 'none';
+            var str = ""
+            x0 = width / 2;
+            y0 = height / 2;
+
+            kx = width / 20;
+            ky = height / 10;
+
+            str += ("<font color=" + color + ">");
+
+            for (i = 1; i < width; i = i + 20)
+                str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < height; i = i + 20)
+                str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+
+            for (x = - 10; x < 10; x = x + 0.01) {
+                y = x * x;
+                str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            } document.getElementsByTagName('p')[0].innerHTML = str;
+        }
+
+        function x3(width, height, color) {
+            document.getElementsByTagName('pre')[0].style.display = 'none';
+            var str = ""
+            x0 = width / 2;
+            y0 = height / 2;
+
+            kx = width / 20;
+            ky = height / 10;
+
+
+            str += ("<font color=" + color + ">");
+
+
+            for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            for (x = - 10; x < 10; x = x + 0.01) {
+                y = x * x * x;
+                str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            }
+            document.getElementsByTagName('p')[0].innerHTML = str;
+        }
+
+        function sinX(width, height, color) {
+            document.getElementsByTagName('pre')[0].style.display = 'none';
+            var str = ""
+            x0 = width / 2;
+            y0 = height / 2;
+
+            kx = width / 20;
+            ky = height / 10;
+
+            str += ("<font color=" + color + ">");
+
+            for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+            for (x = - 10; x < 10; x = x + 0.01) {
+                y = Math.sin(x);
+                str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            } document.getElementsByTagName('p')[0].innerHTML = str;
+        }
+
+        function cosX(width, height, color) {
+            document.getElementsByTagName('pre')[0].style.display = 'none';
+            var str = ""
+            x0 = width / 2;
+            y0 = height / 2;
+
+            kx = width / 20;
+            ky = height / 10;
+
+
+            str += ("<font color=" + color + ">");
+
+
+            for (i = 1; i < width; i = i + 20) str += (" <div style='top: " + y0 + " ; left: " + i + " '>_</div> ");
+            for (i = 1; i < height; i = i + 20) str += (" <div style='left: " + x0 + " ; top: " + i + " '>|</div> ");
+
+            for (x = - 10; x < 10; x = x + 0.01) {
+                y = Math.cos(x);
+                str += ("<div style='left:" + (x0 + kx * x) + ";top:" + (y0 - ky * y + 3) + " '>.</div>");
+            } document.getElementsByTagName('p')[0].innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

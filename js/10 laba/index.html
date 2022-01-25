@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <script src="jquery-3.6.0.js"></script>
+    <style>
+        div {
+            height: 130px;
+            border: 2px dotted gray;
+            position: relative;
+        }
+
+        img {
+            position: relative;
+        }
+
+        .menu-item .submenu:hover {
+            background-color: limegreen;
+            font-family: "Monotype Corsiva";
+        }
+
+        nav {
+            border: 1px solid darkblue;
+            width: 660px;
+            font-size: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-item {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            font-family: Arial;
+            animation: asd 8s linear infinite;
+            margin-left: 40px;
+            height: auto;
+            border: none;
+        }
+
+        .menu-item .submenu {
+            width: 155;
+            height: 40px;
+            background: lightpink;
+            position: absolute;
+            cursor: pointer;
+            font-size: 36px;
+            font-family: "Times New Roman";
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <title>document</title>
+</head>
+
+<body>
+    <div class="dragable">
+
+        <p>Перетащите Предметы.</p>
+
+        <textarea name="da" cols="10" rows="5"></textarea>
+
+        <img src="https://en.js.cx/clipart/ball.svg">
+    </div>
+
+
+    <div class="move">
+
+        <img src="https://en.js.cx/clipart/ball.svg" class="moveable" id="move">
+    </div>
+    <img src="https://en.js.cx/clipart/ball.svg" class="moveable" id="move2">
+
+
+    <nav>
+        <div class="menu-item">
+            Л.р. №5
+            <div class="submenu">
+                DOM
+            </div>
+        </div>
+        <div class="menu-item">
+            Л.р. №6
+            <div class="submenu">
+                BOM
+            </div>
+        </div>
+        <div class="menu-item">
+            Л.р. №8
+            <div class="submenu">
+                События
+            </div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

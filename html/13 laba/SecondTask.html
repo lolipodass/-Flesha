@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head> </head>
+
+<body>
+  <table border="1">
+    <tr>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <td id="name"></td>
+      <td id="surname"></td>
+    </tr>
+  </table>
+  <script>
+    str = "<student>";
+    str += "<name>КУ</name>";
+    str += "<surname>Жопка</surname>";
+    str += "</student>";
+    if (window.DOMParser) {
+      parser = new DOMParser();
+      xmlDoc = parser.parseFromString(str, "text/xml");
+    } else {
+      alert("Обнови браузер мудила");
+      // xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+      // xmlDoc.async = false;
+      // xmlDoc.loadXML(str);
+    }
+    console.log(parent);
+    document.getElementById("name").innerHTML =
+      xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    document.getElementById("surname").innerHTML =
+      xmlDoc.getElementsByTagName("surname")[0].childNodes[0].nodeValue;
+  </script>
+</body>
+
+</html>

@@ -23,3 +23,16 @@ function task2() {
     }
     console.table(data);
 }
+
+
+function openWindow() {
+    let new_window = open('about:blank',)
+
+    new_window.document.write("<h1>Hello, World!</h1>")
+    new_window.document.write('<button  onclick="displayInfo()" style="margin-right: 10px;">dispay somesing</button>')
+    new_window.document.write('<button value="${name} (close)" onclick="window.close()">close</button>')
+
+    let func_script = new_window.document.createElement('script')
+    func_script.innerText = `function displayInfo() { document.write('<p> - amongus!</p>')}`
+    new_window.document.body.append(func_script)
+}

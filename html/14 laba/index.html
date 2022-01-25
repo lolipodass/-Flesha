@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style/style.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+    viewBox="100 -100 300 300" width="700" height="400">
+    <defs>
+      <path id="sometext" fill="#F5B041" stroke="red"
+        d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213, 131.91,264,150c40.67,14.43,108.57-6.91,229-145" />
+
+      <linearGradient id="line">
+        <stop offset="10%" stop-color="green"></stop>
+        <stop offset="80%" stop-color="orange"></stop>
+      </linearGradient>
+
+      <radialGradient id="radial">
+        <stop offset="25%" stop-color="pink"></stop>
+        <stop offset="75%" stop-color="magenta"></stop>
+      </radialGradient>
+
+      <symbol id="cogsymb">
+        <path id="cog"
+          d="M100 59.384v-18.768l-14.333-2.389c-0.582-1.771-1.291-3.483-2.119-5.127l8.443-11.82-13.271-13.271-11.799 8.428c-1.651-0.835-3.373-1.552-5.153-2.139l-2.383-14.298h-18.768l-2.383 14.298c-1.78 0.587-3.502 1.304-5.153 2.139l-11.8-8.428-13.271 13.271 8.443 11.82c-0.827 1.644-1.537 3.356-2.118 5.127l-14.333 2.389v18.768l14.367 2.395c0.582 1.755 1.29 3.452 2.113 5.081l-8.471 11.86 13.271 13.271 11.88-8.486c1.621 0.815 3.31 1.516 5.055 2.093l2.4 14.402h18.768l2.4-14.402c1.746-0.577 3.434-1.278 5.055-2.093l11.88 8.486 13.271-13.271-8.471-11.86c0.823-1.629 1.531-3.326 2.113-5.081l14.367-2.394zM50 62.5c-6.904 0-12.5-5.596-12.5-12.5 0-6.904 5.596-12.5 12.5-12.5 6.904 0 12.5 5.596 12.5 12.5 0 6.904-5.596 12.5-12.5 12.5z" />
+      </symbol>
+
+    </defs>
+
+    <use xlink:href="#sometext" />
+    <!-- TEXT -->
+    <text class="text" x="200" y="100">
+      <textPath xlink:href="#sometext">
+        <tspan>dog cat bob </tspan>
+      </textPath>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="300">
+    <circle cx="80" cy="120" r="60" fill="url(#radial)"></circle>
+
+    <rect x="150" y="70" width="100" height="100" fill="red" stroke="black" stroke-width="4" stroke-dashoffset="1000"
+      stroke-dasharray="1000">
+    </rect>
+
+    <ellipse id="greenEllipse" cx="320" cy="125" rx="60" ry="40" fill="green">
+    </ellipse>
+
+    <polygon points="440 60,380 150, 500 150,440 60" stroke="black" fill="url(#line)" stroke-width="4">
+    </polygon>
+
+    <polyline points="80 200,320 200,260 240,550 240" fill="none" stroke="purple"></polyline>
+  </svg>
+  <img src="svg.svg">
+
+  <svg width="800" height="200">
+    <use xlink:href="#cog" class="cog1" fill="black" transform="scale(0.5)" />
+    <use xlink:href="#cog" class="cog2" x="125" fill="black" transform="rotate(35 36 26)" />
+    <use xlink:href="#cog" class="cog3" x="250" fill="black" transform="scale(0.8)" />
+    <use xlink:href="#cog" class="cog4" x="375" fill="black" transform="rotate(15 20 44)" />
+    <use xlink:href="#cog" class="cog5" x="500" fill="black" transform="rotate(1 22 1)" />
+
+  </svg>
+
+</body>
+
+</html>

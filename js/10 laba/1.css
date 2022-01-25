@@ -1,0 +1,15 @@
+img{
+    transition: 1s;
+    width: 400px;
+}
+figure{
+
+    float: left;
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+
+p{
+    display: inline;
+}

@@ -3,18 +3,25 @@
 function task1() {
     let form = document.forms[0];
 
-    console.log(`student ${form.surname.value},
-    special ${form.spec.value},
-    curs ${form.curs.value},
-    need to pass 
-    `)
+let div=document.createElement("div");
+
+    let p=document.createElement("p");
+    p.innerHTML=`student <strong>${form.surname.value}</strong>,special<strong> ${form.spec.value}</strong>,curs <strong>${form.curs.value}</strong>, need to pass:`;
+    div.append(p);
+
+    let list=document.createElement("ul");
 
     let les = form.querySelectorAll('input[type="checkbox"]');
     for (let i = 0; i < les.length; i++) {
         if (les[i].checked) {
-            console.log(les[i].name);
+            let li=document.createElement("li");
+            li.innerHTML=les[i].name
+            list.appendChild(li);
         }
     }
+    div.appendChild(list);
+    console.log(div);
+    document.body.append(div);
 }
 
 document.querySelector("input[type='reset']").addEventListener("click", task1);

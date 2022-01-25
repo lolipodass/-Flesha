@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="note">
+        <xs:complexType>
+        <xs:sequnce>
+            <xs:element name="heading" type="xs:string"/>
+            <xs:element name="abzac" type="xs:string"/>
+            <xs:element name="abzac" type="xs:string"/>
+            <xs:element name="foot" type="xs:string"/>
+        </xs:sequnce>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

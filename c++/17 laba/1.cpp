@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int **createArr(short sizeX, short sizeY);
-void fullArr(int **arr, short sizeX, short sizeY);
-void showArr(int **arr, short sizeX, short sizeY);
-void sum(int **arr, short minX, short minY, short maxX, short maxY);
-void find(int **arr, short sizeX, short sizeY);
+int **createArr(short, short);
+void fullArr(int **, short, short);
+void showArr(int **, short, short);
+void sum(int **, short, short, short, short);
+void find(int **, short, short);
 
 int main()
 {

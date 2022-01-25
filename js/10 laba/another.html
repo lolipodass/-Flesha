@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <button onclick="choice(1)"> x^2 </button>
+    <button onclick="choice(2)"> x^3 </button>
+    <button onclick="choice(3)"> sin(x) </button>
+    <button onclick="choice(4)"> cos(x) </button>
+    <input id="colors" type="color" /><br />
+    <script>
+        function draw(func) {
+            if ($("#graph")) $('#graph').remove();
+            // if (document.querySelector("#graph")) document.querySelector("#graph").remove();
+            let color = $("#colors").val();
+            // let color = document.getElementById('colors').value;
+
+            let div = document.createElement("div");
+            div.setAttribute("id", 'graph');
+            for (let i = -10; i < 10; i += 0.005) {
+                let dot = document.createElement("p");
+                dot.innerHTML = `@`;
+                dot.style.fontSize = "30px";
+                dot.style.position = "absolute";
+                dot.style.color = color;
+                if (func(i) * 100 > 600) continue;
+                if (func(i) * 100 > 1000) break;
+                dot.style.top = `${func(i) * 100 + 200}px`;
+                dot.style.left = `${i * 100 + 600}px`;
+                div.append(dot);
+            }
+            console.log(div);
+            document.body.append(div);
+        }
+
+        function choice(choice) {
+            switch (choice) {
+                case 1:
+                    return draw(x2)
+                    break;
+                case 2:
+                    return draw(x3)
+                    break;
+                case 3:
+                    return draw(sin)
+                    break;
+                case 4:
+                    return draw(cos)
+                    break;
+            }
+        }
+        function x2(x) { return x * x; }
+        function x3(x) { return x * x * x; }
+        function sin(x) { return Math.sin(x) }
+        function cos(x) { return Math.cos(x) }
+
+    </script>
+    <script src="jquery-3.6.0.js"></script>r
+</body>
+
+</html>

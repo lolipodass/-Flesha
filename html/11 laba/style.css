@@ -1,0 +1,29 @@
+*{  
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+heading {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1px solid aqua;
+  text-transform: uppercase;
+}
+note {
+  background-color: #e7d2ad;
+  margin: 0 15%;
+}
+abzac {
+  display: block;
+  font-family: "Exo2";
+  font-style: italic;
+  font-size: 16px;
+  margin: 15px 0;
+}
+foot {
+  display: block;
+  width: 100%;
+  margin-top: 25%;
+  border-top: 1px solid aqua;
+  text-align: center;
+}

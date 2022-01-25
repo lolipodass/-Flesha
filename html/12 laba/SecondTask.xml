@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="table.xsl"?>
+<catalog>
+    <student>
+        <name>ПОПУСК</name>
+        <surname>ПОПУСКАЕТ</surname>
+        <mark>6</mark>
+    </student>
+    <student>
+        <name>КОГО</name>
+        <surname>Я</surname>
+        <mark>9</mark>
+    </student>
+    <student>
+        <name>ТАК</name>
+        <surname>НЕ И ПОНЯЛ</surname>
+        <mark>3</mark>
+    </student>
+
+</catalog>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <label><input type='radio' name='r' value='1' /> y=x²</label>
+    <label><input type='radio' name='r' value='2' /> y=x³</label>
+    <label><input type='radio' name='r' value='3' /> y=sin(x)</label>
+    <label><input type='radio' name='r' value='4' /> y=cos(x)</label>
+    <br /><span>Выберите цвет:</span>
+    <input id="colors" type="color" />
+    <input type="button" value="График" onclick="graph()">
+    <br>
+    <canvas id="canvas" width="1000" height="300"></canvas>
+
+    <script>
+
+        let color = document.getElementById('colors').value;
+
+        function graph() {
+            let context = canvas.getContext("2d");
+            let y0 = canvas.height / 2;
+
+            context.beginPath();
+            context.moveTo(0, y0);
+
+            for (let x = 0; x < canvas.width; x++) {
+                let y = f(x) * 50;
+                context.lineTo(x, y + y0);
+            }
+            context.stroke();
+
+
+        }
+        function f(x) {
+            return Math.sin(x / 50);
+        }
+
+    </script>
+
+</body>
+
+</html>
