@@ -6,7 +6,11 @@
 using namespace std;
 int main()
 {
+    char xux;
+    char *xu;
 
-    int array = 1;
-    cout << "Array";
+    char buf[]{"hello world!"};
+    xux='J';
+    xu=&xux;
+
 }
