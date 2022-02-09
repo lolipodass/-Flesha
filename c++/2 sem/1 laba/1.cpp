@@ -14,7 +14,6 @@
 #include <vector>
 #include <fstream>
 
-
 using namespace std;
 
 struct citizen
@@ -28,8 +27,8 @@ struct citizen
 void structWrite(citizen *);
 void structRead(citizen *);
 vector<citizen> findStuct(citizen *, short, int);
-void choose(citizen*, short, short);
-void FileRead(citizen* );
+void choose(citizen *, short, short);
+void FileRead(citizen *, short);
 
 int main()
 {
@@ -38,7 +37,7 @@ int main()
 
     short size;
     cout << "Array size: ";
-    cin>>size;
+    cin >> size;
     citizen *cit = new citizen[size];
 
     short choice;
@@ -60,7 +59,7 @@ void choose(citizen *arr, short choice, short size)
     case 1:
         for (short i = 1; i <= size; i++)
         {
-            cout<<i<<" citizen\n";
+            cout << i << " citizen\n";
             structWrite(&arr[i]);
         }
         break;
@@ -69,6 +68,7 @@ void choose(citizen *arr, short choice, short size)
         {
             structRead(&arr[i]);
         }
+        break;
     case 3:
     {
         vector<citizen> buff;
@@ -81,8 +81,9 @@ void choose(citizen *arr, short choice, short size)
             structRead(&arr[i]);
         }
     }
+    break;
     case 4:
-        FileRead(arr);
+        FileRead(arr, 0);
         break;
     default:
         break;
@@ -115,7 +116,7 @@ void structWrite(citizen *cit)
     getline(cin, cit->address);
     cout << "gender(m/w)\n";
 
-    ret:
+ret:
     cin >> buf;
     if (buf == 'm')
         cit->sex = 1;
@@ -132,32 +133,47 @@ void structRead(citizen *cit)
 {
     cout << "Full name: " << cit->name << ",Age: " << cit->age << ",address: " << cit->address << ", gender: ";
     if (cit->sex)
-        cout<<"Male\n";
+        cout << "Male\n";
     else
-        cout<<"Female\n";
+        cout << "Female\n";
 }
 
-void FileRead(citizen* cit)
+void FileRead(citizen *cit, short start)
 {
-    cout<<"\nType file name(with ext)";
+    cout << "\nType file name(with ext)";
     ifstream fin;
     char fileName[50];
-    back:
-    cin>>fileName;
+back:
+    cin >> fileName;
     fin.open(fileName);
-    if(!fin.is_open())
+    if (!fin.is_open())
     {
-        cout<<"file "<<fileName<<" not exist, try again ";
+        cout << "file " << fileName << " not exist, try again ";
         goto back;
     }
 
     string line;
     getline(fin, line);
-    cout<<line;
+    cout << line;
 
-    short startName=line.find("NAME:");
-    if(startName==string::npos){
-        cout<<"\nbad file, try again: ";
+    short startName = line.find("NAME:");
+    short startAge = line.find("AGE:", startName);
+    short startStreet = line.find("STREET:", startAge);
+    short startGender = line.find("GENDER:", startStreet);
+    short npos = string::npos;
+    if (startName == npos && startAge == npos && startStreet == npos && startGender == npos)
+    {
+        cout << "\nbad file, try again: ";
         goto back;
     };
+
+    startName += 5;
+    cit[start].name = line.substr(startName, startAge - startName);
+    cit[start].age = stoi(line.substr(startAge + 4, startStreet - startAge - 4));
+    cit[start].address = line.substr(startStreet + 7, startGender - startStreet - 7);
+
+    if (line.substr(startGender + 7, line.size() - startGender - 7) == "m")
+        cit[start].sex = 1;
+    if (line.substr(startGender + 7, line.size() - startGender - 7) == "w")
+        cit[start].sex = 0;
 }
