@@ -10,9 +10,10 @@
 
 #include <iostream>
 #include <string>
-#include <locale>
 #include <windows.h>
 #include <vector>
+#include <fstream>
+
 
 using namespace std;
 
@@ -27,7 +28,8 @@ struct citizen
 void structWrite(citizen *);
 void structRead(citizen *);
 vector<citizen> findStuct(citizen *, short, int);
-void choose(citizen, short, short);
+void choose(citizen*, short, short);
+void FileRead(citizen* );
 
 int main()
 {
@@ -35,17 +37,14 @@ int main()
     SetConsoleOutputCP(1251);
 
     short size;
-    cout << "Array size";
-    cin >> size;
+    cout << "Array size: ";
+    cin>>size;
     citizen *cit = new citizen[size];
 
     short choice;
     while (1)
     {
-        cout << "1 input struct";
-        cout << "2 console log struct";
-        cout << "3 find element with date";
-        cout << "-1 break";
+        cout << "1 input struct\n2 console log struct\n3 find element with date\n4 read from file\n-1 break\n";
 
         cin >> choice;
         if (choice == -1)
@@ -59,8 +58,9 @@ void choose(citizen *arr, short choice, short size)
     switch (choice)
     {
     case 1:
-        for (short i = 0; i < size; i++)
+        for (short i = 1; i <= size; i++)
         {
+            cout<<i<<" citizen\n";
             structWrite(&arr[i]);
         }
         break;
@@ -81,6 +81,9 @@ void choose(citizen *arr, short choice, short size)
             structRead(&arr[i]);
         }
     }
+    case 4:
+        FileRead(arr);
+        break;
     default:
         break;
     }
@@ -112,7 +115,7 @@ void structWrite(citizen *cit)
     getline(cin, cit->address);
     cout << "gender(m/w)\n";
 
-ret:
+    ret:
     cin >> buf;
     if (buf == 'm')
         cit->sex = 1;
@@ -127,5 +130,34 @@ ret:
 
 void structRead(citizen *cit)
 {
-    cout << "Full name: " << cit->name << ",Age: " << cit->age << ",address: " << cit->address << ", sex: " << cit->sex << "\n";
+    cout << "Full name: " << cit->name << ",Age: " << cit->age << ",address: " << cit->address << ", gender: ";
+    if (cit->sex)
+        cout<<"Male\n";
+    else
+        cout<<"Female\n";
+}
+
+void FileRead(citizen* cit)
+{
+    cout<<"\nType file name(with ext)";
+    ifstream fin;
+    char fileName[50];
+    back:
+    cin>>fileName;
+    fin.open(fileName);
+    if(!fin.is_open())
+    {
+        cout<<"file "<<fileName<<" not exist, try again ";
+        goto back;
+    }
+
+    string line;
+    getline(fin, line);
+    cout<<line;
+
+    short startName=line.find("NAME:");
+    if(startName==string::npos){
+        cout<<"\nbad file, try again: ";
+        goto back;
+    };
 }
