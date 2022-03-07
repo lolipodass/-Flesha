@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #6fe2e2;
+  background-color: #d5ddef;
 }
 
 code {
@@ -21,10 +21,38 @@ code {
 }
 
 td{
-  border: #787a7a 3px solid;
+  border: #4c394f 1px solid;
   border-collapse: collapse;
 }
 table{
-  border: #ffe881 10px solid;
+  border: #917898 5px solid;
   border-collapse: collapse;
+}
+
+.rise{
+  background-color: #00eb46;
+}
+
+.fall{
+  background-color: #ff0000;
+}
+
+.black{
+  width: 30px;
+  height: 30px;
+  background-color: black;
+}
+
+.white{
+  background-color: wheat;
+}
+
+.letters{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.chess td{
+  border: none;
 }

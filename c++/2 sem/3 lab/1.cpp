@@ -6,9 +6,8 @@ using namespace std;
 
 struct bitfield
 {
-    unsigned int 
+    unsigned int
 };
-
 
 struct account
 {

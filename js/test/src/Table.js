@@ -1,5 +1,6 @@
 import Row from "./Row";
 import ReactDOM from 'react-dom';
+import ChessBoard from './ChessBoard';
 
 function Table(info) {
 //   let list;
@@ -14,10 +15,16 @@ function Table(info) {
         <p> Date {new Date().toLocaleDateString()}.</p>
       </header>
       <div className="Table">
+
         <table>
           <tbody>
-            
-          <Row {...info}></Row>
+          {Row(info.length,[...info])}
+          </tbody>
+        </table>
+        <hr></hr>
+        <table className="chess">
+          <tbody>
+            {ChessBoard()}
           </tbody>
         </table>
       </div>
