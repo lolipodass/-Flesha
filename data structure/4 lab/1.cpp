@@ -17,6 +17,7 @@ int main()
     short size;
     cout << "Array size: ";
     cin >> size;
+    contract cfon[size];
     contract *con = new contract[size];
 }
 
@@ -33,6 +34,17 @@ void findChoice(contract arrContracts)
     default:
         break;
     }
+}
+void FullContract(contract *cont)
+{
+    cout << "Имя";
+    cin >> cont->name;
+    cout << "Стоимость";
+    cin >> cont->price;
+    cout << "Количество концертов";
+    cin >> cont->amount;
+    cout << "Опыт работы";
+    cin >> cont->workExp;
 }
 
 //! Для вашей БД (из лабораторной работы №2) создать индексы для каждой структуры
