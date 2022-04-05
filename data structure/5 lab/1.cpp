@@ -12,10 +12,12 @@ struct contract
     short workExp;
 };
 
-void ReadFromFile();
+void ReadFromFile(contract *, int);
 void FullContract(contract *);
 void WriteToFile(contract *);
-void Choosing(contract *, short, short);
+contract *Choosing(contract *, short, short);
+contract *Delete(contract *, int);
+void ShowStruct(contract *, int);
 
 int main()
 {
@@ -29,16 +31,17 @@ int main()
 
     while (1)
     {
-        cout << "1 вручную\n2 чтение из файла\n3 запись в файл\n";
+        cout << "\n1 вручную\n2 чтение из файла\n3 запись в файл\n4 удаление записей\n5 показ структуры\n";
         cin >> value;
-        if (value != 1 || value != 2 || value != 3 || value != 4 || value != 5 || value != 6)
+        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6))
         {
             break;
         }
+        con = Choosing(con, value, size);
     }
 }
 
-void Choosing(contract *arr, short choice, short size)
+contract *Choosing(contract *arr, short choice, short size)
 {
 
     switch (choice)
@@ -49,7 +52,7 @@ void Choosing(contract *arr, short choice, short size)
         int amount;
         cin >> amount;
         (amount > size) || (amount == 0) ? amount = size : 0;
-        for (short i = 0; i < size; i++)
+        for (short i = 0; i < amount; i++)
         {
             FullContract(&arr[i]);
         }
@@ -57,34 +60,69 @@ void Choosing(contract *arr, short choice, short size)
     break;
 
     case 2:
-        ReadFromFile();
+        ReadFromFile(arr, size);
         break;
     case 3:
         WriteToFile(&arr[1]);
+        break;
+    case 4:
+        return Delete(arr, size);
+
+        break;
+    case 5:
+        ShowStruct(arr, size);
         break;
     default:
 
         break;
     }
+    return arr;
 }
 
-// void findChoice(contract arrContracts)
-// {
-//     cout << "What field u want to find: \n1 name\n2 price\n3 amount\n4 work experience\n-1 back";
-//     short choice;
-//     switch (choice)
-//     {
-//     case 1:
+void ShowStruct(contract *cont, int size)
+{
+    cout << "size: " << size;
+    for (short i = 0; i < size; i++)
+    {
+        cout << "\n\t\t\t"
+             << i + 1 << " контракт\n";
+        cout << "\tИмя\t"
+             << cont[i].name;
+        cout << "\n\tCтоимость\t" << cont[i].price;
+        cout << "\n\tКонцерты\t" << cont[i].amount;
+        cout << "\n\tОпыт\t" << cont[i].workExp;
+    }
+}
 
-//         break;
+contract *Delete(contract *cont, int size)
+{
+    cout << "\n Сколько элементов удалить(0=all)\n";
+    int amount = 0;
+    cin >> amount;
+    cout << "\n Начиная с какого элемента\n";
+    int position;
+    cin >> position;
+    (amount > size) ? amount = size : 0;
+    (position > size) ? position = size : 0;
 
-//     default:
-//         break;
-//     }
-// }
+    contract *arr = new contract[size - amount];
+
+    for (short i = 0; i < position; i++)
+    {
+        arr[i] = cont[i];
+    }
+
+    for (short i = position + amount, j = position; i < size; i++, j++)
+    {
+        arr[j] = cont[i];
+    }
+
+    return arr;
+}
+
 void FullContract(contract *cont)
 {
-    cout << "Имя\n";
+    cout << "\nИмя\n";
     cin >> cont->name;
     cout << "Стоимость\n";
     cin >> cont->price;
@@ -94,7 +132,7 @@ void FullContract(contract *cont)
     cin >> cont->workExp;
 }
 
-void ReadFromFile()
+void ReadFromFile(contract *cont, int size)
 {
     ifstream file;
     string line;
@@ -110,23 +148,26 @@ void ReadFromFile()
         return;
     }
 
-    short startName = line.find("NAME:") + 5;
-    short startPrice = line.find("PRICE:", startName) + 6;
-    short startAmount = line.find("AMOUNT:", startPrice) + 7;
-    short startExperience = line.find("EXPERIENCE:", startAmount) + 11;
-
-    short npos = static_cast<short>(string::npos);
-    if (startName == npos || startPrice == npos || startAmount == npos || startExperience == npos)
+    for (short i = 0; i < size; i++)
     {
-        cout << "bad file\n";
-        return;
-    }
 
-    cout << '\n'
-         << line.substr(startName, startPrice - startName - 7) << "\n";
-    cout << line.substr(startPrice, startAmount - startPrice - 7) << "\n";
-    cout << line.substr(startAmount, startExperience - startAmount - 11) << "\n";
-    cout << line.substr(startExperience, line.size()) << "\n";
+        short startName = line.find("NAME:") + 5;
+        short startPrice = line.find("PRICE:", startName) + 6;
+        short startAmount = line.find("AMOUNT:", startPrice) + 7;
+        short startExperience = line.find("EXPERIENCE:", startAmount) + 11;
+
+        short npos = static_cast<short>(string::npos);
+        if (startName == npos || startPrice == npos || startAmount == npos || startExperience == npos)
+        {
+            cout << "bad file\n";
+            return;
+        }
+
+        cont[i].name = line.substr(startName, startPrice - startName - 7);
+        cont[i].price = stoi(line.substr(startPrice, startAmount - startPrice - 7));
+        cont[i].amount = stoi(line.substr(startAmount, startExperience - startAmount - 11));
+        cont[i].workExp = stoi(line.substr(startExperience, line.size()));
+    }
 }
 
 void WriteToFile(contract *con)
@@ -135,9 +176,3 @@ void WriteToFile(contract *con)
     file.open("out");
     file << "NAME:" << con->name << "PRICE:" << con->price << "AMOUNT:" << con->amount << "EXPERIENCE:" << con->workExp;
 }
-
-// !В соответствии со своими заданиями из лабораторной работы №2, составить массив структур для своей БД и реализовать
-// !функции считывания с файла и вывод
-// !структуры на экран, записи в файл и добавления данных в массив. Для функций считывание и записи должен быть выбор (в виде меню),
-// ! в котором пользователь
-// !может сам ввести название файла с клавиатуры либо использовать уже заготовленный файл.

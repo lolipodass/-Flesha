@@ -22,7 +22,7 @@ function App() {
     <div>
       <div className="">
         <button onClick={show}><div className="flag flag-by"></div></button>
-        <input type="text" placeholder="jopa" ref={refInput} onInput={mask} onFocus={mask} onClick={mask} />
+        <input type="text" placeholder="Выберите страну" ref={refInput} onInput={mask} onFocus={mask} onClick={mask} />
       </div>
 
       <ul className='hidden numbers' ref={refUl} onClick={phone}>
@@ -64,10 +64,18 @@ function App() {
     }
     pos = input.value.search('_');
 
+
+    console.log(pos, "pos");
+    console.log(place, "place");
+    console.log(input.value.charAt(pos));
+    // console.log(char);
+
+
     input.value = place;
 
     input.selectionStart = input.selectionEnd = pos;
 
+    // if (!(target.value[0] == "+" && target.value > 0 && target.value < 9)) target.value = "jopa";
 
   }
 }

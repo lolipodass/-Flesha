@@ -7,6 +7,7 @@ class Clock extends React.Component {
     return <div >{this.state.date.toLocaleString("ru-RU", options)}</div>
   }
 
+
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000)
   }
