@@ -12,12 +12,18 @@ struct contract
     short workExp;
 };
 
-void ReadFromFile(contract *, int);
+struct Array
+{
+    contract *arr;
+    int length;
+};
+
+void ReadFromFile(Array *);
 void FullContract(contract *);
 void WriteToFile(contract *);
-contract *Choosing(contract *, short, short);
-contract *Delete(contract *, int);
-void ShowStruct(contract *, int);
+Array *Choosing(Array *, short);
+Array *Delete(Array *);
+void ShowStruct(Array *);
 
 int main()
 {
@@ -25,7 +31,9 @@ int main()
     short size;
     cout << "Array size: ";
     cin >> size;
-    contract *con = new contract[size];
+    Array *array = new Array[size];
+    array->length = size;
+    // contract *con = new contract[size];
 
     short value;
 
@@ -37,11 +45,11 @@ int main()
         {
             break;
         }
-        con = Choosing(con, value, size);
+        array = Choosing(array, value);
     }
 }
 
-contract *Choosing(contract *arr, short choice, short size)
+Array *Choosing(Array *fullArray, short choice)
 {
 
     switch (choice)
@@ -51,73 +59,39 @@ contract *Choosing(contract *arr, short choice, short size)
         cout << "сколько элементов заполнить?(0=all)";
         int amount;
         cin >> amount;
-        (amount > size) || (amount == 0) ? amount = size : 0;
+        (amount > fullArray->length) || (amount == 0) ? amount = fullArray->length : 0;
         for (short i = 0; i < amount; i++)
         {
-            FullContract(&arr[i]);
+            FullContract(&(fullArray->arr[i]));
         }
     }
     break;
 
     case 2:
-        ReadFromFile(arr, size);
+        ReadFromFile(fullArray);
         break;
     case 3:
-        WriteToFile(&arr[1]);
+        cout << "сколько элементов записать?(0=all)";
+        int amount;
+        cin >> amount;
+        (amount > fullArray->length) || (amount == 0) ? amount = fullArray->length : 0;
+        for (int i = 0; i < amount; i++)
+        {
+            WriteToFile(&(fullArray->arr[i]));
+        }
         break;
     case 4:
-        return Delete(arr, size);
+        return Delete(fullArray);
 
         break;
     case 5:
-        ShowStruct(arr, size);
+        ShowStruct(fullArray);
         break;
     default:
 
         break;
     }
-    return arr;
-}
-
-void ShowStruct(contract *cont, int size)
-{
-    cout << "size: " << size;
-    for (short i = 0; i < size; i++)
-    {
-        cout << "\n\t\t\t"
-             << i + 1 << " контракт\n";
-        cout << "\tИмя\t"
-             << cont[i].name;
-        cout << "\n\tCтоимость\t" << cont[i].price;
-        cout << "\n\tКонцерты\t" << cont[i].amount;
-        cout << "\n\tОпыт\t" << cont[i].workExp;
-    }
-}
-
-contract *Delete(contract *cont, int size)
-{
-    cout << "\n Сколько элементов удалить(0=all)\n";
-    int amount = 0;
-    cin >> amount;
-    cout << "\n Начиная с какого элемента\n";
-    int position;
-    cin >> position;
-    (amount > size) ? amount = size : 0;
-    (position > size) ? position = size : 0;
-
-    contract *arr = new contract[size - amount];
-
-    for (short i = 0; i < position; i++)
-    {
-        arr[i] = cont[i];
-    }
-
-    for (short i = position + amount, j = position; i < size; i++, j++)
-    {
-        arr[j] = cont[i];
-    }
-
-    return arr;
+    return fullArray;
 }
 
 void FullContract(contract *cont)
@@ -132,7 +106,7 @@ void FullContract(contract *cont)
     cin >> cont->workExp;
 }
 
-void ReadFromFile(contract *cont, int size)
+void ReadFromFile(Array *array)
 {
     ifstream file;
     string line;
@@ -148,7 +122,7 @@ void ReadFromFile(contract *cont, int size)
         return;
     }
 
-    for (short i = 0; i < size; i++)
+    for (short i = 0; i < array->length; i++)
     {
 
         short startName = line.find("NAME:") + 5;
@@ -163,10 +137,13 @@ void ReadFromFile(contract *cont, int size)
             return;
         }
 
-        cont[i].name = line.substr(startName, startPrice - startName - 7);
-        cont[i].price = stoi(line.substr(startPrice, startAmount - startPrice - 7));
-        cont[i].amount = stoi(line.substr(startAmount, startExperience - startAmount - 11));
-        cont[i].workExp = stoi(line.substr(startExperience, line.size()));
+        contract *buf = array->arr;
+        buf[i].name = line.substr(startName, startPrice - startName - 7);
+        cout << "japan";
+        buf[i].price = stoi(line.substr(startPrice, startAmount - startPrice - 7));
+        buf[i].amount = stoi(line.substr(startAmount, startExperience - startAmount - 11));
+        buf[i].workExp = stoi(line.substr(startExperience, line.size()));
+        getline(file, line);
     }
 }
 
@@ -174,5 +151,50 @@ void WriteToFile(contract *con)
 {
     ofstream file;
     file.open("out");
-    file << "NAME:" << con->name << "PRICE:" << con->price << "AMOUNT:" << con->amount << "EXPERIENCE:" << con->workExp;
+    file << "NAME:" << con->name << "PRICE:" << con->price << "AMOUNT:" << con->amount << "EXPERIENCE:" << con->workExp << '\n';
+}
+
+Array *Delete(Array *arr)
+{
+    cout << "\n Сколько элементов удалить(0=all)\n";
+    int amount = 0;
+    cin >> amount;
+    cout << "\n Начиная с какого элемента\n";
+    int position;
+    cin >> position;
+    (amount > arr->length) ? amount = arr->length : 0;
+    (position > arr->length) ? position = arr->length : 0;
+
+    contract *arrNew = new contract[(arr->length) - amount];
+
+    for (short i = 0; i < position; i++)
+    {
+        arrNew[i] = arr->arr[i];
+    }
+
+    for (short i = position + amount, j = position; i < arr->length; i++, j++)
+    {
+        arrNew[j] = arr->arr[i];
+    }
+
+    Array *FIN;
+    FIN->arr = arrNew;
+    FIN->length = arr->length - amount;
+    return FIN;
+}
+
+void ShowStruct(Array *arr)
+{
+    cout << "size: " << arr->length;
+    for (short i = 0; i < arr->length; i++)
+    {
+
+        cout << "\n\t\t\t"
+             << i + 1 << " контракт\n";
+        cout << "\tИмя\t"
+             << arr->arr[i].name;
+        cout << "\n\tCтоимость\t" << arr->arr[i].price;
+        cout << "\n\tКонцерты\t" << arr->arr[i].amount;
+        cout << "\n\tОпыт\t" << arr->arr[i].workExp;
+    }
 }
