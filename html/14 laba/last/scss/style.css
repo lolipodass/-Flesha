@@ -1,0 +1,9 @@
+p::-moz-selection {
+  color: white;
+  background: #e779c6;
+}
+p::selection {
+  color: white;
+  background: #e779c6;
+}
+/*# sourceMappingURL=style.css.map */
