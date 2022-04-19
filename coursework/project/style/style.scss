@@ -22,3 +22,31 @@ body{
 	height: 100vh;
 }
 
+.wraper{
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 0.2fr 2fr 1fr;
+	nav{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5vh;
+		height: 100vh;
+
+
+		background-color: #202551;
+		border-radius: 50px;
+		img{
+			width: 64px;
+			height: auto;
+
+		}
+	}
+
+}
+
+appearance-hidden{
+	appearance: none;
+}
+
