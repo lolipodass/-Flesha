@@ -1,12 +1,11 @@
 import './milligram.css';
-import CalendarBody from './CalendarBody';
+import CalendarHead from './CalendarHead';
 
 
 function App() {
   return (
     <table>
-
-      <CalendarBody />
+<CalendarHead/>
     </table>
   );
 }
