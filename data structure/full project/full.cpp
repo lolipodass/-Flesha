@@ -16,12 +16,21 @@ struct contract
 
 void ReadFromFile(contract *);
 void FullContract(contract *);
-void WriteToFile(contract *);
+void WriteToFile(contract *, int);
 contract *Choosing(contract *, short);
-contract *Delete(contract *);
-void ShowStruct(contract *);
-void SortPrice(contract *);
-void SortAmount(contract *);
+void ShowStruct(contract *, int);
+contract *deleteElements(contract *, int, int, int);
+contract *copyArray(contract *, int);
+
+template <typename T>
+bool sorting(T val1, T val2, bool sorting)
+{
+    if (val1 > val2 && sorting)
+        return 1;
+    if (val1 < val2 && !sorting)
+        return 1;
+    return 0;
+}
 
 int main()
 {
@@ -34,9 +43,9 @@ int main()
 
     while (1)
     {
-        cout << "\n1 вручную\n2 чтение из файла\n3 запись в файл\n4 удаление записей\n5 показ структуры\n6 сортировка цене\n7 по количеству\n";
+        cout << "\n1 вручную\n2 чтение из файла\n3 запись в файл\n4 удаление записей\n5 показ структуры\n6 сортировка\n7 фильтрация\n";
         cin >> value;
-        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6 ||value==7))
+        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6 || value == 7))
         {
             break;
         }
@@ -65,29 +74,82 @@ contract *Choosing(contract *arr, short choice)
     case 2:
         ReadFromFile(arr);
         break;
-    case 3:
-        WriteToFile(arr);
-        break;
-    case 4:
-        return Delete(arr);
 
+    case 3:
+        WriteToFile(arr, arraySize);
         break;
+
+    case 4:
+    {
+        cout << "\n Сколько элементов удалить(0=all)\n";
+        int amount = 0;
+        cin >> amount;
+        cout << "\n Начиная с какого элемента\n";
+        int position;
+        cin >> position;
+        position -= 1;
+        (amount > arraySize) ? amount = arraySize : 0;
+        (position > arraySize) ? position = arraySize : 0;
+
+        return deleteElements(arr, arraySize, amount, position);
+    }
+    break;
+
     case 5:
-        ShowStruct(arr);
+        ShowStruct(arr, arraySize);
         break;
     case 6:
-        SortPrice(arr);
-        break;
+    {
+        cout << "\n1 цене \n2 по количеству: ";
+        int sort;
+        cin >> sort;
+        cout << "по возрастанию(1) убыванию(0): ";
+        bool sortingMethod;
+        cin >> sortingMethod;
+        for (int i = 0; i < arraySize; i++)
+            for (short j = 0; j < arraySize; j++)
+            {
+                if (sorting(arr[i].price, arr[j].price, sortingMethod) && sort)
+                    swap(arr[i], arr[j]);
+                if (sorting(arr[i].amount, arr[j].amount, sortingMethod) && sort == 2)
+                    swap(arr[i], arr[j]);
+            }
+    }
+    break;
+
     case 7:
-        SortAmount(arr);
+    {
+        cout << "\nВведите интересуемую строку: ";
+        string index;
+        cin >> index;
+        contract *buffArray = copyArray(arr, arraySize);
+        int buffArraySize = arraySize;
+
+        for (int i = 0; i < buffArraySize; i++)
+        {
+            if (buffArray[i].name.find(index) == -1)
+            {
+                buffArray = deleteElements(buffArray, buffArraySize, 1, i);
+                buffArraySize--;
+            }
+        }
+        cout << "(0)записать или (1)вывести на экран отсортированный массив: ";
+        bool method;
+        cin >> method;
+        if (method)
+            ShowStruct(buffArray, buffArraySize);
+        else
+            WriteToFile(buffArray, buffArraySize);
         break;
+    }
+
     default:
         break;
     }
     return arr;
 }
 
-void ShowStruct(contract *cont)
+void ShowStruct(contract *arr, int arraySize)
 {
     cout << "size: " << arraySize;
     for (short i = 0; i < arraySize; i++)
@@ -95,39 +157,27 @@ void ShowStruct(contract *cont)
         cout << "\n\t\t\t"
              << i + 1 << " контракт\n";
         cout << "\tИмя\t"
-             << cont[i].name;
-        cout << "\n\tСтоимость\t" << cont[i].price;
-        cout << "\n\tКонцерты\t" << cont[i].amount;
-        cout << "\n\tОпыт\t" << cont[i].workExp;
+             << arr[i].name;
+        cout << "\n\tСтоимость\t" << arr[i].price;
+        cout << "\n\tКонцерты\t" << arr[i].amount;
+        cout << "\n\tОпыт\t" << arr[i].workExp;
     }
 }
 
-contract *Delete(contract *cont)
+contract *deleteElements(contract *array, int arraySize, int amount, int position)
 {
-    cout << "\n Сколько элементов удалить(0=all)\n";
-    int amount = 0;
-    cin >> amount;
-    cout << "\n Начиная с какого элемента\n";
-    int position;
-    cin >> position;
-    (amount > arraySize) ? amount = arraySize : 0;
-    (position > arraySize) ? position = arraySize : 0;
-
-    contract *arr = new contract[arraySize - amount];
+    contract *newArray = new contract[arraySize - amount];
 
     for (short i = 0; i < position; i++)
-    {
-        arr[i] = cont[i];
-    }
+        newArray[i] = array[i];
 
     for (short i = position + amount, j = position; i < arraySize; i++, j++)
-    {
-        arr[j] = cont[i];
-    }
-    arraySize-=amount;
-    delete[] cont;
+        newArray[j] = array[i];
 
-    return arr;
+    arraySize -= amount;
+    delete[] array;
+
+    return newArray;
 }
 
 void FullContract(contract *cont)
@@ -181,10 +231,10 @@ void ReadFromFile(contract *cont)
     }
 }
 
-void WriteToFile(contract *con)
+void WriteToFile(contract *arr, int arraySize)
 {
     ofstream file;
-string name;
+    string name;
     cout << "название файла: ";
     cin >> name;
     file.open(name);
@@ -194,45 +244,13 @@ string name;
         return;
     }
     for (short i = 0; i < arraySize; i++)
-        file << "NAME:" << con[i].name << " PRICE:" << con[i].price << " AMOUNT:" << con[i].amount << " EXPERIENCE:" << con[i].workExp<<'\n';
+        file << "NAME:" << arr[i].name << " PRICE:" << arr[i].price << " AMOUNT:" << arr[i].amount << " EXPERIENCE:" << arr[i].workExp << '\n';
 }
 
-void SortPrice(contract *arrContracts)
+contract *copyArray(contract *arr, int length)
 {
-    bool sorting;
-    cout<<"по возрастанию(1) убыванию(0)";
-    cin>>sorting;
-
-    for(int i=0;i<arraySize;i++)
-    {
-
-        for (short j = 0; j < arraySize; j++)
-        {
-        if (arrContracts[i].price>arrContracts[j].price&&sorting)
-            swap(arrContracts[i],arrContracts[j]); 
-
-        if (arrContracts[i].price<arrContracts[j].price&&!sorting)
-            swap(arrContracts[i],arrContracts[j]); 
-        }
-    }
-}
-void SortAmount(contract *arrContracts)
-{
-
-        bool sorting;
-    cout<<"по возрастанию(1) убыванию(0)";
-    cin>>sorting;
-
-    for(int i=0;i<arraySize;i++)
-    {
-
-        for (short j = 0; j < arraySize; j++)
-        {
-        if (arrContracts[i].amount>arrContracts[j].amount&&sorting)
-            swap(arrContracts[i],arrContracts[j]); 
-
-        if (arrContracts[i].amount<arrContracts[j].amount&&!sorting)
-            swap(arrContracts[i],arrContracts[j]); 
-        }
-    }
+    contract *newArray = new contract[length];
+    for (int i = 0; i < length; i++)
+        newArray[i] = arr[i];
+    return newArray;
 }
