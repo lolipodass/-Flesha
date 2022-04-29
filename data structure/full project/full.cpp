@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 template <typename T>
 bool compare(T val1, T val2, bool sorting)
 {
@@ -32,15 +31,15 @@ int main()
     {
         cout << "\n1 вручную\n2 чтение из файла\n3 запись в файл\n4 удаление записей\n5 показ структуры\n6 сортировка\n7 фильтрация\n8 поиск\n";
         cin >> value;
-        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6 || value == 7||value==8||value==9))
+        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6 || value == 7 || value == 8 || value == 9))
         {
             break;
         }
-        arr = Choosing(arr,length, value);
+        arr = Choosing(arr, length, value);
     }
 }
 
-contract *Choosing(contract *arr,size_t length, short choice)
+contract *Choosing(contract *arr, size_t length, short choice)
 {
 
     switch (choice)
@@ -59,7 +58,7 @@ contract *Choosing(contract *arr,size_t length, short choice)
     break;
 
     case 2:
-        ReadFromFile(arr,length);
+        ReadFromFile(arr, length);
         break;
 
     case 3:
@@ -93,17 +92,25 @@ contract *Choosing(contract *arr,size_t length, short choice)
         cin >> sort;
         switch (sort)
         {
-        case 0:value="price";break;
-        case 1:value="amount";break;
-        case 2:value="workExp";break;
-        default:exit(1);break;
+        case 0:
+            value = "price";
+            break;
+        case 1:
+            value = "amount";
+            break;
+        case 2:
+            value = "workExp";
+            break;
+        default:
+            exit(1);
+            break;
         }
         cout << "по возрастанию(1), убыванию(0): ";
         bool sortingDirection;
         cin >> sortingDirection;
-        sorting(arr,length ,value,sortingDirection);
-
+        sorting(arr, length, value, sortingDirection);
     }
+
     break;
 
     case 7:
@@ -132,7 +139,7 @@ contract *Choosing(contract *arr,size_t length, short choice)
         break;
     }
     case 8:
-        findValue(arr,length);
+        findValue(arr, length);
         break;
 
     default:
@@ -141,45 +148,55 @@ contract *Choosing(contract *arr,size_t length, short choice)
     return arr;
 }
 
-void findValue(contract *arr,size_t length)
+void findValue(contract *arr, size_t length)
 {
     cout << "\nСтоимость (0), количеству концертов(1), опыту(2): ";
     int sort;
     string value;
     cin >> sort;
     switch (sort)
-    {case 0:value="price";break;
-    case 1:value="amount";break;
-    case 2:value="workExp";break;
-    default: exit(1);break;}
+    {
+    case 0:
+        value = "price";
+        break;
+    case 1:
+        value = "amount";
+        break;
+    case 2:
+        value = "workExp";
+        break;
+    default:
+        exit(1);
+        break;
+    }
 
-    sorting(arr,length,value,0);
-    ShowStruct(arr,length);
-    cout<<"element to find: ";
+    sorting(arr, length, value, 0);
+    ShowStruct(arr, length);
+    cout << "element to find: ";
     int key;
-    cin>>key;
-    cout<<"способ поиска: (0)интерполяционный (1) бинарный";
+    cin >> key;
+    cout << "способ поиска: (0)интерполяционный (1) бинарный";
     bool algorthim;
-    cin>>algorthim;
+    cin >> algorthim;
     int found;
     if (algorthim)
-        found=binarySeacrh(arr,length,key);    
-    else found=InterpolSearch(arr,length,key)+1;
-    if (found==-1)
-        cout<<"значение не найдено\n";
+        found = binarySeacrh(arr, length, key);
     else
-    cout<<"значение: "<<found+1;
-    
+        found = InterpolSearch(arr, length, key);
+    if (found == -1)
+        cout << "значение не найдено\n";
+    else
+        cout << "значение: " << found + 1;
 }
 
-void sorting(contract* arr,size_t length , string sortingValue,bool sortingDirection)
+void sorting(contract *arr, size_t length, string sortingValue, bool sortingDirection)
 {
     for (int i = 0; i < length; i++)
     {
         for (short j = 0; j < length; j++)
         {
-            if(compare( arr[i][sortingValue],arr[j][sortingValue],sortingDirection))
-                swap(arr[i], arr[j]); 
+            if (compare(arr[i][sortingValue], arr[j][sortingValue], sortingDirection))
+                swap(arr[i], arr[j]);
         }
     }
 }
@@ -187,10 +204,10 @@ void sorting(contract* arr,size_t length , string sortingValue,bool sortingDirec
 void ShowStruct(contract *arr, size_t length)
 {
     cout << "size: " << length;
-    cout<<"\n№\tИмя \t\tСтоимость \tКоличество\tОпыт\n";
+    cout << "\n№\tИмя \t\tСтоимость \tКоличество\tОпыт\n";
     for (short i = 0; i < length; i++)
     {
-        cout <<i + 1 <<"\t"<< arr[i].name<<"\t\t"<< arr[i].price<<"\t\t" <<arr[i].amount<<"\t\t"<<arr[i].workExp<<'\n';
+        cout << i + 1 << "\t" << arr[i].name << "\t\t" << arr[i].price << "\t\t" << arr[i].amount << "\t\t" << arr[i].workExp << '\n';
     }
 }
 

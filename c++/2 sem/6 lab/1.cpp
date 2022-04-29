@@ -214,7 +214,7 @@ int main()
     test.push(7);
     test.push(6);
 
-    test.print("test");
+    test.print("ne test");
 
     // cout << "введи элемент";
     // int num;

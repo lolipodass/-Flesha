@@ -1,0 +1,10 @@
+form {
+  width: 80vh;
+  margin: auto;
+}
+
+.note {
+  background-color: darkorange;
+  width: 200px;
+  height: 100px;
+}
