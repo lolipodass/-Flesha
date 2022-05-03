@@ -22,7 +22,19 @@ body{
 	height: 100vh;
 }
 
-.category{
+.greeting{
+	display:block;
+	margin-top: 1.5vh;
+	margin-bottom: 6vh;
+	>*{
+		margin: 0px;
+	}
+	p{
+		font-weight: 400;
+	}
+}
+
+.genre{
 	display: block;
 	text-align: center;
 	border-radius: 20px;
@@ -37,14 +49,41 @@ body{
 	font-weight: 500;
 	font-size: 18px;
 	letter-spacing: -0.03em; 	
-
-	
 }
+
+
+
+.content-row{
+	margin: 3vh 0 3vh 0;
+}
+
+
+
+
 
 .row{
 	display: flex;
 	flex-direction: row;
-	gap: 2vh;
+	gap: Min( 1.5vw, 20px);
+
+}
+
+.recent-game{
+	display: block;
+	width: 200px;
+	height: 75px;
+	.small{
+		height: 100%;
+		aspect-ratio: 1;
+		display: inline-block;
+		border-radius: 5px;
+	}
+	p{
+		display: inline;
+
+		vertical-align: top;
+		margin-top: 0px;
+	}
 }
 
 .wraper{
@@ -52,13 +91,16 @@ body{
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: 0.1fr 2fr;
+	gap: 1vw;
+	margin:0px 2px 0px 5px;
 	nav{
+		margin:0.5vh 0px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 5vh;
-		height: 100vh;
+		height: 99vh;
 
 
 		background-color: #202551;
@@ -71,8 +113,3 @@ body{
 	}
 
 }
-
-appearance-hidden{
-	appearance: none;
-}
-

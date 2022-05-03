@@ -13,7 +13,21 @@ body {
   height: 100vh;
 }
 
-.category {
+.greeting {
+  display: block;
+  margin-top: 1.5vh;
+  margin-bottom: 6vh;
+}
+
+.greeting > * {
+  margin: 0px;
+}
+
+.greeting p {
+  font-weight: 400;
+}
+
+.genre {
   display: block;
   text-align: center;
   border-radius: 20px;
@@ -28,6 +42,10 @@ body {
   letter-spacing: -0.03em;
 }
 
+.content-row {
+  margin: 3vh 0 3vh 0;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,7 +54,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 2vh;
+  gap: Min(1.5vw, 20px);
+}
+
+.recent-game {
+  display: block;
+  width: 200px;
+  height: 75px;
+}
+
+.recent-game .small {
+  height: 100%;
+  aspect-ratio: 1;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.recent-game p {
+  display: inline;
+  vertical-align: top;
+  margin-top: 0px;
 }
 
 .wraper {
@@ -46,9 +83,12 @@ body {
   grid-auto-flow: column;
   -ms-grid-columns: 0.1fr 2fr;
       grid-template-columns: 0.1fr 2fr;
+  gap: 1vw;
+  margin: 0px 2px 0px 5px;
 }
 
 .wraper nav {
+  margin: 0.5vh 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +103,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 5vh;
-  height: 100vh;
+  height: 99vh;
   background-color: #202551;
   border-radius: 50px;
 }
@@ -71,11 +111,5 @@ body {
 .wraper nav img {
   width: 64px;
   height: auto;
-}
-
-appearance-hidden {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 /*# sourceMappingURL=style.css.map */
