@@ -3,6 +3,10 @@ body {
   font-family: lato,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+img {
+  height: inherit;
+}
+
 .background {
   background-color: #080b25;
   background-image: radial-gradient(at 17% 78%, #0d2168 0px, transparent 50%), radial-gradient(at 71% 79%, #241158 0px, transparent 50%), radial-gradient(at 28% 2%, #0d0724 0px, transparent 50%), radial-gradient(at 75% 22%, #1a273d 0px, transparent 50%);
@@ -10,70 +14,7 @@ body {
 
 .full-size {
   width: 100%;
-  height: 100vh;
-}
-
-.greeting {
-  display: block;
-  margin-top: 1.5vh;
-  margin-bottom: 6vh;
-}
-
-.greeting > * {
-  margin: 0px;
-}
-
-.greeting p {
-  font-weight: 400;
-}
-
-.genre {
-  display: block;
-  text-align: center;
-  border-radius: 20px;
-  background-color: #5C2BB7;
-  width: 210px;
-  height: 140px;
-  left: 17px;
-  top: 11px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: -0.03em;
-}
-
-.content-row {
-  margin: 3vh 0 3vh 0;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: Min(1.5vw, 20px);
-}
-
-.recent-game {
-  display: block;
-  width: 200px;
-  height: 75px;
-}
-
-.recent-game .small {
   height: 100%;
-  aspect-ratio: 1;
-  display: inline-block;
-  border-radius: 5px;
-}
-
-.recent-game p {
-  display: inline;
-  vertical-align: top;
-  margin-top: 0px;
 }
 
 .wraper {
@@ -111,5 +52,88 @@ body {
 .wraper nav img {
   width: 64px;
   height: auto;
+}
+
+.content-row {
+  margin: 3vh 0 3vh 0;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: Min(1.5vw, 20px);
+}
+
+.greeting {
+  display: block;
+  margin-top: 1.5vh;
+  margin-bottom: 6vh;
+}
+
+.greeting > * {
+  margin: 0px;
+}
+
+.greeting p {
+  font-weight: 400;
+}
+
+.genre {
+  display: block;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #5C2BB7;
+  width: 210px;
+  height: 140px;
+  left: 17px;
+  top: 11px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+
+.recent-game {
+  display: block;
+  width: 200px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.recent-game .small {
+  height: 100%;
+  aspect-ratio: 1;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.recent-game span {
+  display: inline;
+  vertical-align: top;
+  margin-top: 0px;
+}
+
+.game {
+  width: 250px;
+  background-color: #161A3D;
+  height: 220px;
+  text-align: center;
+  border-radius: 15px;
+  line-height: 30px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.game img {
+  height: 80%;
+  width: 100%;
+  border-radius: 15px;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 /*# sourceMappingURL=style.css.map */
