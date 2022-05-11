@@ -1,5 +1,5 @@
 form {
-  width: 80vh;
+  width: 60vw;
   margin: auto;
 }
 
@@ -7,4 +7,19 @@ form {
   background-color: darkorange;
   width: 200px;
   height: 100px;
+}
+
+.menu {
+  width: 100vw;
+  display: flex;
+}
+
+.buttons {
+  width: 30vw;
+}
+
+.place {
+  width: 70vw;
+  height: 32vh;
+  background-color: rgb(150, 142, 131);
 }

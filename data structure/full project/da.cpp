@@ -1,38 +1,80 @@
 #include <iostream>
-using std::cout,std::cin;
+#include <string>
+using std::cout, std::cin;
 
-const int N = 17;
-//интерполяционный поиск
-int InterpolSearch(int A[], int key)
+enum Type
 {
-    int mid, left = 0, right = N - 1;
-    while (A[left] <= key && A[right] >= key)
-    {
-        mid = left + ((key - A[left]) * (right - left)) / (A[right] - A[left]);
-        if (A[mid] < key)
-            left = mid + 1;
-        else if (A[mid] > key)
-            right = mid - 1;
-        else
-            return mid;
-    }
-    if (A[left] == key)
-        return left;
-    else
-        return -1;
-}
-//главная функция
+    VERB,
+    NOUN,
+    PRONOUN,
+    ADJECTIVE,
+    ADVERB,
+    PREPOSITION,
+    CONJUNCTION,
+    INTERJECTION
+};
+
+struct word
+{
+    std::string wordRus;
+    std::string wordEng;
+    Type Type;
+};
+
+word *Choosing(word *arr, size_t length, short choice);
+
 int main()
 {
-    int i, key;
-    int A[N] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59};
-    cout << "Искомый элемент > ";
-    cin >> key; //ввод ключа
-    cout << "Исходный массив: ";
-    for (i = 0; i < N; i++)
-        cout << A[i] << " "; //вывод массива
-    if (InterpolSearch(A, key) == -1)
-        cout << "\nЭлемент не найден";
-    else
-        cout << "\nНомер элемента: " << InterpolSearch(A, key) + 1;
+
+    cout << "Array size: ";
+    size_t length;
+    cin >> length;
+    word *arr = new word[length];
+
+    int value;
+    while (1)
+    {
+        cout << "\n1 вручную\n2 чтение из файла\n3 запись в файл\n4 удаление записей\n5 показ структуры\n6 сортировка\n7 фильтрация\n8 поиск\n";
+        cin >> value;
+        if (!(value == 1 || value == 2 || value == 3 || value == 4 || value == 5 || value == 6 || value == 7 || value == 8 || value == 9))
+        {
+            break;
+        }
+        arr = Choosing(arr, length, value);
+    }
+}
+
+word *Choosing(word *arr, size_t length, short choice)
+{
+
+    switch (choice)
+    {
+    case 1:
+    {
+    }
+    break;
+
+    case 2:
+        break;
+
+    case 3:
+        break;
+
+    case 4:
+        break;
+
+    case 5:
+        break;
+    case 6:
+        break;
+
+    case 7:
+        break;
+    case 8:
+        break;
+
+    default:
+        break;
+    }
+    return arr;
 }
