@@ -1,0 +1,12 @@
+ENG:test1tyi RUS:тест TYPE:1
+ENG:test3ad RUS:тест2 TYPE:1
+ENG:test5ad RUS:тест3 TYPE:7
+ENG:test1tyi RUS:тест TYPE:5
+ENG:test3ad RUS:тест2 TYPE:5
+ENG:test5ad RUS:тест3 TYPE:5
+ENG:test1tyi RUS:тест TYPE:2
+ENG:test3ad RUS:тест2 TYPE:3
+ENG:test5ad RUS:тест3 TYPE:3
+ENG:test1tyi RUS:тест TYPE:7
+ENG:test3ad RUS:тест2 TYPE:1
+ENG:test5ad RUS:тест3 TYPE:7
