@@ -14,27 +14,30 @@
 </head>
 
 <body>
-	<div class="background full-size">
+	<section class="background full-size">
 		<div class="wrapper">
-			<nav>
-				<a href=""><img class="icon" src="sources/svg/icons8-bookmark.svg" alt="букмарк"></a>
-				<a href=""><img class="icon" src="sources/svg/icons8-bookmark.svg" alt="букмарк"></a>
-				<a href=""><img class="icon" src="sources/svg/icons8-bookmark.svg" alt="букмарк"></a>
-				<a href=""><img class="icon" src="sources/svg/icons8-bookmark.svg" alt="букмарк"></a>
-				<a href=""><img class="icon" src="sources/svg/icons8-bookmark.svg" alt="букмарк"></a>
+			<aside>
+				<nav>
+					<a href="index.html"><img class="icon" src="sources/svg/icon-home.svg" alt="Главная"></a>
+					<a href="cart.html"><img class="icon" src="sources/svg/icon-bookmark.svg"
+							alt="Правила пользования"></a>
+					<a href="pirvacy.html"><img class="icon" src="sources/svg/icon-message.svg"
+							alt="Политика Конфиденциальности"></a>
+					<a href=""><img class="icon" src="sources/svg/icon-profile.svg" alt="Профиль"></a>
+					<a href=""><img class="icon" src="sources/svg/icon-settings.svg" alt="Настройки"></a>
+				</nav>
+			</aside>
 
-			</nav>
-
-			<div class="main">
-				<div class="greeting">
-					<h1>hello user</h1>
+			<main>
+				<section class="greeting">
+					<h1 class="header">hello user</h1>
 					<p>что вы можете узнать сегодня</p>
-				</div>
+				</section>
 
 
 
-				<div class="content-row">
-					<h1>Жанры игр</h1>
+				<section class="content-row">
+					<h1 class="header">Жанры игр</h1>
 					<div class="row">
 						<div class="genre">testing</div>
 						<div class="genre">testing</div>
@@ -43,10 +46,11 @@
 						<div class="genre">testing</div>
 						<div class="genre">testing</div>
 						<div class="genre">testing</div>
+						<div class="genre">testing</div>
 					</div>
-				</div>
+				</section>
 
-				<div class="content-row">
+				<section class="content-row">
 					<h1>Недавняя активность</h1>
 					<div class="row">
 						<div class="recent-game">
@@ -75,9 +79,9 @@
 						</div>
 
 					</div>
-				</div>
+				</section>
 
-				<div class="content-row">
+				<section class="content-row">
 					<h1>Gender choice</h1>
 					<div class="row">
 						<div class="game">
@@ -104,24 +108,13 @@
 							<img src="sources/images/csgo.png" alt="dota">
 							<span>cs go</span>
 						</div>
-						<div class="game">
-							<img src="sources/images/csgo.png" alt="dota">
-							<span>cs go</span>
-						</div>
-						<div class="game">
-							<img src="sources/images/csgo.png" alt="dota">
-							<span>cs go</span>
-						</div>
 					</div>
-				</div>
+				</section>
+			</main>
 
-
-
-
-
-				<div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, ad!</div>
-			</div>
-			<div class="information">
+			<aside id="information" class="information hidden">
+				<div class="button-back"></div>
+				<div class="button-add-game"></div>
 				<img src="sources/images/csgo.png" alt="cs og">
 				<h1 class="header">Test</h1>
 				<p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eligendi id iste
@@ -165,22 +158,25 @@
 
 				<div class="content-row">
 					<h1 class="header">Трейлер</h1>
-					<iframe src="https://www.youtube.com/embed/M1PrbQAkWP0" title="YouTube video player" frameborder="0"
-						allowfullscreen></iframe>
+					<!-- <iframe src="https://www.youtube.com/embed/M1PrbQAkWP0" title="YouTube video player" frameborder="0"
+						allowfullscreen></iframe> -->
 				</div>
 
-			</div>
+			</aside>
 
 
 		</div>
 
-	</div>
+		</div>
 
-	</div>
+		</div>
 
 
 
-	</div>
+		</div>
+
+		<script src="scripts/data.js"></script>
+		<script src="scripts/main.js"></script>
 </body>
 
 </html>
