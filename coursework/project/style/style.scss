@@ -97,7 +97,7 @@ a{
 
 main{
 	grid-area: main;
-	height: 97vh;
+	// height: 97vh;
 }
 
 
@@ -303,7 +303,7 @@ main{
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	background-color: wheat;
+	background-image: url(../sources/svg/icon-cross.svg);
 }
 .button-add-game
 {
@@ -311,7 +311,7 @@ main{
 	height: 48px;
 	position: absolute;
 	right: 22px ;
-	background-image: url(../sources/images/cart.png);
+	background-image: url(../sources/svg/icon-cart.svg);
 	display: block;
 	cursor: pointer;
 }
@@ -331,6 +331,7 @@ main{
 	}
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: Min(1.5vw, 20px);
 
 }

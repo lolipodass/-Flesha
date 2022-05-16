@@ -1,10 +1,3 @@
-/*  :::     :::     :::     :::::::::   :::::::: 
-   :+:     :+:   :+: :+:   :+:    :+: :+:    :+: 
-  +:+     +:+  +:+   +:+  +:+    +:+ +:+         
- +#+     +:+ +#++:++#++: +#++:++#:  +#++:++#++   
- +#+   +#+  +#+     +#+ +#+    +#+        +#+    
- #+#+#+#   #+#     #+# #+#    #+# #+#    #+#     
-  ###     ###     ### ###    ###  ########      */
 ::root {
   --val: 0;
 }
@@ -55,17 +48,10 @@
   --val: 100;
 }
 
-/* :::::::::::  :::      ::::::::    :::::::: 
-      :+:    :+: :+:   :+:    :+:  :+:    :+: 
-     +:+   +:+   +:+  +:+         +:+         
-    +#+  +#++:++#++: :#:         +#++:++#++   
-   +#+  +#+     +#+ +#+   +#+#        +#+    
-  #+#  #+#     #+# #+#    #+#  #+#    #+#     
- ###  ###     ###  ########    ########      */
 body {
-  background-color: #090C28;
+  background-color: #090c28;
   color: #ffffff;
-  font-family: lato,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: lato, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 text {
@@ -81,10 +67,10 @@ img {
 svg circle {
   stroke-width: 10;
   -webkit-transform-origin: center;
-          transform-origin: center;
+  transform-origin: center;
   fill: none;
   -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
   stroke: url(#gradient-fill);
 }
 
@@ -109,12 +95,14 @@ main {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: main;
-  height: 97vh;
 }
 
 .background {
-  background-color: #090C28;
-  background-image: radial-gradient(at 17% 78%, #0d2168 0px, transparent 50%), radial-gradient(at 71% 79%, #241158 0px, transparent 50%), radial-gradient(at 28% 2%, #0d0724 0px, transparent 50%), radial-gradient(at 75% 22%, #1a273d 0px, transparent 50%);
+  background-color: #090c28;
+  background-image: radial-gradient(at 17% 78%, #0d2168 0px, transparent 50%),
+    radial-gradient(at 71% 79%, #241158 0px, transparent 50%),
+    radial-gradient(at 28% 2%, #0d0724 0px, transparent 50%),
+    radial-gradient(at 75% 22%, #1a273d 0px, transparent 50%);
 }
 
 .full-size {
@@ -122,29 +110,22 @@ main {
   height: 100%;
 }
 
-/*     ::::::::  :::            :::      ::::::::   ::::::::  :::::::::: :::::::: 
-     :+:    :+: :+:          :+: :+:   :+:    :+: :+:    :+: :+:       :+:    :+: 
-    +:+        +:+         +:+   +:+  +:+        +:+        +:+       +:+         
-   +#+        +#+        +#++:++#++: +#++:++#++ +#++:++#++ +#++:++#  +#++:++#++   
-  +#+        +#+        +#+     +#+        +#+        +#+ +#+              +#+    
- #+#    #+# #+#        #+#     #+# #+#    #+# #+#    #+# #+#       #+#    #+#     
- ########  ########## ###     ###  ########   ########  ########## ########     */
 * {
-  scrollbar-color: white #090C28;
+  scrollbar-color: white #090c28;
   scrollbar-width: thin;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 *::-webkit-scrollbar {
   width: 10px;
-  background-color: #090C28;
+  background-color: #090c28;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 32px;
-  border: 4px solid #090C28;
+  border: 4px solid #090c28;
 }
 
 .sticky {
@@ -156,10 +137,10 @@ main {
 .wrapper {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "nav main";
+  grid-template-areas: "nav main";
   grid-auto-flow: column;
   -ms-grid-columns: 0.1fr 2fr;
-      grid-template-columns: 0.1fr 2fr;
+  grid-template-columns: 0.1fr 2fr;
   gap: 1vw;
   margin: 0px 5px;
 }
@@ -178,14 +159,14 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 7vh;
   height: 99vh;
   background-color: #202551;
@@ -219,7 +200,7 @@ main {
 .genre {
   display: block;
   text-align: center;
-  background-color: #5C2BB7;
+  background-color: #5c2bb7;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   width: 220px;
@@ -253,10 +234,10 @@ main {
 
 .game {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 250px;
-          flex: 1 1 250px;
+  -ms-flex: 1 1 250px;
+  flex: 1 1 250px;
   width: 250px;
-  background-color: #161A3D;
+  background-color: #161a3d;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -273,7 +254,7 @@ main {
   width: 100%;
   border-radius: 15px;
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .text {
@@ -284,7 +265,7 @@ main {
 
 .information {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 2vh;
   position: fixed;
   width: Max(420px, 35vw);
@@ -297,10 +278,10 @@ main {
 
 .information img {
   -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: -o-pixelated;
-      image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-pixelated;
+  image-rendering: pixelated;
   width: 100%;
   height: 30%;
   border-radius: inherit;
@@ -314,9 +295,9 @@ main {
   text-align: justify;
   font-size: Max(18px, Min(20px, 1.5vw));
   -webkit-text-size-adjust: 80%;
-     -moz-text-size-adjust: 80%;
-      -ms-text-size-adjust: 80%;
-          text-size-adjust: 80%;
+  -moz-text-size-adjust: 80%;
+  -ms-text-size-adjust: 80%;
+  text-size-adjust: 80%;
 }
 
 .score {
@@ -339,7 +320,7 @@ main {
   width: 30px;
   height: 30px;
   position: absolute;
-  background-color: wheat;
+  background-image: url(../sources/svg/icon-cross.svg);
 }
 
 .button-add-game {
@@ -347,26 +328,21 @@ main {
   height: 48px;
   position: absolute;
   right: 22px;
-  background-image: url(../sources/images/cart.png);
+  background-image: url(../sources/svg/icon-cart.svg);
   display: block;
   cursor: pointer;
 }
 
-/*     :::::::::   ::::::::  :::       ::: 
-      :+:    :+: :+:    :+: :+:       :+:  
-     +:+    +:+ +:+    +:+ +:+       +:+   
-    +#++:++#:  +#+    +:+ +#+  +:+  +#+    
-   +#+    +#+ +#+    +#+ +#+ +#+#+ +#+     
-  #+#    #+# #+#    #+#  #+#+# #+#+#       
- ###    ###  ########    ###   ###       */
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: Min(1.5vw, 20px);
 }
 
@@ -376,44 +352,30 @@ main {
 
 .row-justify {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-/*    ::::::::::: :::::::: 
-         :+:    :+:    :+: 
-        +:+    +:+         
-       +#+    +#++:++#++   
-      +#+           +#+    
- #+# #+#    #+#    #+#     
- #####      ########    */
 .hidden {
   -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 
-/*       :::   :::   :::::::::: ::::::::: :::::::::::     :::  
-       :+:+: :+:+:  :+:        :+:    :+:    :+:       :+: :+: 
-     +:+ +:+:+ +:+ +:+        +:+    +:+    +:+      +:+   +:+ 
-    +#+  +:+  +#+ +#++:++#   +#+    +:+    +#+     +#++:++#++: 
-   +#+       +#+ +#+        +#+    +#+    +#+     +#+     +#+  
-  #+#       #+# #+#        #+#    #+#    #+#     #+#     #+#   
- ###       ### ########## ######### ########### ###     ###    */
 @media screen and (max-width: 770px) {
   .row {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   .genre {
     width: 180px;
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
   }
   .icon {
     width: 45px;
@@ -427,8 +389,8 @@ main {
     gap: 10vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     position: fixed;
     width: 100%;
     height: 8vh;
@@ -442,7 +404,7 @@ main {
     top: 0;
     width: 100%;
     -webkit-transition-duration: 0.8s;
-            transition-duration: 0.8s;
+    transition-duration: 0.8s;
     border-radius: 0px;
     font-size: 20px;
   }

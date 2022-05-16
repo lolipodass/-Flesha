@@ -26,8 +26,12 @@ function checkClick(e) {
         return;
 
     const elem = data.games.find((elem) => elem.id == parent.dataset.id);
-
-    changeInformation(elem);
+    if (elem.id == information.dataset.id && information.classList) {
+        information.classList.add("hidden")
+        console.log("jopa")
+    }
+    else
+        changeInformation(elem);
 }
 
 function changeInformation(elem) {
@@ -37,6 +41,8 @@ function changeInformation(elem) {
     information.children[4].innerHTML = elem.description;
     information.classList.remove("hidden")
 }
+
+
 
 function toggleInformation(id) {
     information.classList.toggle("hidden");
