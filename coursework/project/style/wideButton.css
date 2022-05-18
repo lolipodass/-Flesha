@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 15px;
+  background-color: #313d5a;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 20px;
+  height: 98%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button.right::after {
+  content: "\00bb";
+  width: 50px;
+  font-size: 60px;
+  position: fixed;
+  opacity: 0;
+  top: 45vh;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.button.right:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.button.left:hover:after {
+  opacity: 1;
+  left: 105px;
+}
+
+.button.left::after {
+  content: "\00ab";
+  width: 50px;
+  font-size: 60px;
+  position: fixed;
+  opacity: 0;
+  top: 45vh;
+  left: -50px;
+  transition: 0.5s;
+}

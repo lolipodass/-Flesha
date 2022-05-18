@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="sources/svg/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/font.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <link rel="stylesheet" href="style/settings.css">
+    <link rel="stylesheet" href="style/pop-up.css">
+</head>
+
+<body>
+    <div class="pop-up" id="pop-up">данные удалены</div>
+    <section class="background full-size">
+        <div class="wrapper">
+            <aside>
+                <nav>
+                    <a href="index.html"><img class="icon" src="sources/svg/icon-home.svg" alt="Главная"
+                            title="Главная"></a>
+                    <a href="cart.html"><img class="icon" src="sources/svg/icon-bookmark.svg" alt="Корзина"
+                            title="Корзина"></a>
+                    <a href="terms.html"><img class="icon" src="sources/svg/icon-message.svg" alt="условия пользовани"
+                            title="Условия пользования"></a>
+                    <a href="register.html"><img class="icon" src="sources/svg/icon-profile.svg" alt="Профиль"
+                            title="Профиль"></a>
+                    <a href="settings.html"><img class="icon" src="sources/svg/icon-settings.svg" alt="Настройки"
+                            title="Настройки"></a>
+                </nav>
+            </aside>
+            <main>
+                <button class="button" onclick="clearId()"><span>очистить корзину</span></button>
+                <button class="button" onclick="clearLogin()"><span>очистить логин</span></button>
+                <button class="button" onclick="clearAll()"><span>очистить все</span></button>
+            </main>
+        </div>
+    </section>
+</body>
+<script src="scripts/popUp.js"></script>
+<script>
+    function clearId() {
+        usePopUp("корзина очищена")
+        localStorage.removeItem("gameId")
+    }
+    function clearLogin() {
+        usePopUp("Авторизация сброшена")
+        localStorage.removeItem("name")
+    }
+    function clearAll() {
+        usePopUp("Настройки сброшены к начальным")
+        localStorage.clear();
+    }
+
+</script>
+
+</html>

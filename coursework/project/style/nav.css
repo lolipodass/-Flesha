@@ -1,0 +1,50 @@
+nav {
+  width: 80px;
+  grid-area: nav;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0.5vh;
+  margin: 0.5vh 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 7vh;
+  height: 99vh;
+  background-color: #202551;
+  border-radius: 10rem;
+}
+
+nav img {
+  width: 50px;
+  aspect-ratio: 1;
+}
+
+@media screen and (max-width: 770px) {
+  nav {
+    background-color: #202551;
+    gap: 10vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: fixed;
+    width: 100%;
+    height: 8vh;
+    bottom: 0px;
+    top: initial;
+    margin: 0;
+    border-radius: 0px;
+    z-index: 1;
+  }
+}
+/*# sourceMappingURL=nav.css.map */

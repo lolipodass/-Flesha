@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="sources/svg/icon.svg">
+    <link rel="icon" href="sources/svg/icon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информационный портал</title>
+    <title>Корзина</title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/font.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cart.css">
+    <link rel="stylesheet" href="style/settings.css">
+    <link rel="stylesheet" href="style/nav.css">
 
 </head>
 
@@ -18,27 +21,57 @@
         <div class="wrapper">
             <aside>
                 <nav>
-                    <a href="index.html"><img class="icon" src="sources/svg/icon-home.svg" alt="Главная"></a>
-                    <a href="cart.html"><img class="icon" src="sources/svg/icon-bookmark.svg" alt="корзина"></a>
-                    <a href="pirvacy.html"><img class="icon" src="sources/svg/icon-message.svg"
-                            alt="Политика Конфиденциальности"></a>
-                    <a href=""><img class="icon" src="sources/svg/icon-profile.svg" alt="Профиль"></a>
-                    <a href=""><img class="icon" src="sources/svg/icon-settings.svg" alt="Настройки"></a>
+                    <a href="index.html"><img class="icon" src="sources/svg/icon-home.svg" alt="Главная"
+                            title="Главная"></a>
+                    <a href="cart.html"><img class="icon" src="sources/svg/icon-bookmark.svg" alt="Корзина"
+                            title="Корзина"></a>
+                    <a href="terms.html"><img class="icon" src="sources/svg/icon-message.svg" alt="условия пользовани"
+                            title="Условия пользования"></a>
+                    <a href="register.html"><img class="icon" src="sources/svg/icon-profile.svg" alt="Профиль"
+                            title="Профиль"></a>
+                    <a href="settings.html"><img class="icon" src="sources/svg/icon-settings.svg" alt="Настройки"
+                            title="Настройки"></a>
                 </nav>
             </aside>
-
             <main>
                 <section class="content-row">
                     <h1>Корзина</h1>
                     <div class="row">
                     </div>
                 </section>
-                <button onclick="clearCart()">очистить список</buttonon>
+                <button onclick="clearCart()" class="button"><span>очистить корзину</span></buttonon>
             </main>
         </div>
     </section>
     <script src="scripts/data.js"></script>
-    <script src="scripts/cart.js"></script>
+    <script>
+        let string = "Корзина пуста";
+        const games = localStorage.getItem("gameId")?.split(",");
+        const main = document.querySelector(".row");
+
+        if (games != undefined) {
+            const map = new Set(games);
+
+            string = '';
+            for (i of map) {
+                if (i == '')
+                    continue;
+                i -= 1;
+                string += `<div class="game"><a  href="gameDescription.html"onclick="change(${i + 1})"><img src="sources/images/${data.games[i].image}" alt="${data.games[i].name}"><span>${data.games[i].name}</span></img></a></div>`
+            }
+        }
+        main.innerHTML = string;
+
+        function change(id) {
+            localStorage.setItem("showItem", id)
+        }
+
+        function clearCart() {
+            localStorage.clear();
+            document.location.reload()
+        }
+
+    </script>
 </body>
 
 </html>

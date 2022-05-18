@@ -1,0 +1,21 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .info {
+  min-height: 600px;
+  background-color: #161a3d;
+  border-radius: 20px;
+}
+
+.wrapper .info img {
+  margin: 10px;
+  border-radius: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="sources/svg/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/font.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <link rel="stylesheet" href="style/pop-up.css">
+    <link rel="stylesheet" href="style/rigister.css">
+    <title>Регистрация</title>
+</head>
+
+<body>
+    <div class="pop-up"></div>
+    <section class="background full-size">
+        <div class="wrapper">
+            <aside>
+                <nav>
+                    <a href="index.html"><img class="icon" src="sources/svg/icon-home.svg" alt="Главная"
+                            title="Главная"></a>
+                    <a href="cart.html"><img class="icon" src="sources/svg/icon-bookmark.svg" alt="Корзина"
+                            title="Корзина"></a>
+                    <a href="terms.html"><img class="icon" src="sources/svg/icon-message.svg" alt="условия пользовани"
+                            title="Условия пользования"></a>
+                    <a href="register.html"><img class="icon" src="sources/svg/icon-profile.svg" alt="Профиль"
+                            title="Профиль"></a>
+                    <a href="settings.html"><img class="icon" src="sources/svg/icon-settings.svg" alt="Настройки"
+                            title="Настройки"></a>
+                </nav>
+            </aside>
+            <main>
+                <h2>
+                    Регистрация
+                </h2>
+                <input placeholder="имя" type="text" class="input">
+                <button class="button">
+                    <span>сохранить имя</span>
+                </button>
+            </main>
+        </div>
+    </section>
+
+    <script src="scripts/popUp.js"></script>
+    <script>
+        const input = document.querySelector(".input");
+
+        document.querySelector(".button").addEventListener("click", logIn)
+
+        function logIn() {
+            localStorage.setItem("name", input.value);
+            popUp("имя сохранено");
+        }
+    </script>
+</body>
+
+</html>
