@@ -216,27 +216,30 @@ int main()
 
     test.print("ne test");
 
-    // cout << "введи элемент";
-    // int num;
-    // cin >> num;
+    cout << "введи элемент";
+    int num;
+    cin >> num;
 
-    // while (!test.IsEmpty())
-    // {
-    //     if (test.GetItem() == num)
-    //     {
-    //         break;
-    //     }
-    //     cout << test.pop();
-    // }
-    // test.pop();
-    // test.pop();
+    while (!test.IsEmpty())
+    {
+        if (test.GetItem() == num)
+        {
+            break;
+        }
+        cout << test.pop();
+    }
+    test.pop();
+    test.pop();
 
-    // int kol = 0;
-    // while (!test.IsEmpty())
-    // {
-    //     kol++;
-    //     test.pop();
-    // }
-    // cout << "\n"
-    //      << kol;
+    int kol = 0;
+    while (!test.IsEmpty())
+    {
+        kol++;
+        test.pop();
+    }
+    cout << "\n"
+         << kol;
 }
+
+// 2 Создать очередь для целых чисел и функции для ввода, вывода и удаления элементов очереди.
+// Найти количество элементов между максимальным и минимальным элементами очереди.

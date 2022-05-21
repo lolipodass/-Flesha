@@ -18,11 +18,16 @@ function draw(dateElement) {
     main.innerHTML = `
     <div class='wrapper info' style="background:radial-gradient(circle at center -10px, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1)) , url(sources/images/${dateElement.imageBig}) no-repeat center/100%">
             <button onclick="changeElement(false)" class="button left"></button>    
-    <img src="sources/images/${dateElement.image}" alt="${dateElement.name}">
-        <div>
-        <h1 >${dateElement.name}</h1>
+            <div class="contain"> 
+                <button onclick="changeElement(false)" class="button left small"></button>
+                <img class="big-image" src="sources/images/${dateElement.image}" alt="${dateElement.name}">
+                <button onclick="changeElement(true)" class="button right small"></button>
+            </div>
+        <div class="text-des">
+        <h1>${dateElement.name}</h1>
         ${dateElement.fullDescription}</div>
         <button onclick="changeElement(true)" class="button right"></button>
+        <div class="bug"></div>
     </div>`
 }
 

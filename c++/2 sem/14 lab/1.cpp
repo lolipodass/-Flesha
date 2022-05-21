@@ -8,7 +8,7 @@ int HashFunctionHorner(const std::string &s, int table_size, const int key)
     {
         hash_result = (key * hash_result + s[i]) % table_size;
     }
-    hash_result = (hash_result * 2 + 1) % table_size;
+    hash_result = (hash_result * 3 + 1) % table_size;
     return hash_result;
 }
 

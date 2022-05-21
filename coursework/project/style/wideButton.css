@@ -15,33 +15,71 @@
   margin: 5px;
 }
 
-.button.right::after {
-  content: "\00bb";
+.big-image {
+  width: 40vw;
+}
+
+.small.button {
+  display: none;
+}
+
+.button::after {
   width: 50px;
   font-size: 60px;
-  position: fixed;
-  opacity: 0;
-  top: 45vh;
-  right: -30px;
+  position: relative;
+  right: 12px;
   transition: 0.5s;
 }
 
-.button.right:hover:after {
-  opacity: 1;
-  right: 10px;
-}
-.button.left:hover:after {
-  opacity: 1;
-  left: 105px;
+.button.right::after {
+  content: "\00bb";
+  animation: anim 1s ease-in-out alternate infinite;
 }
 
 .button.left::after {
+  animation: anim 1s ease-in-out alternate-reverse infinite;
   content: "\00ab";
-  width: 50px;
-  font-size: 60px;
-  position: fixed;
-  opacity: 0;
-  top: 45vh;
-  left: -50px;
-  transition: 0.5s;
+}
+
+.bug {
+  display: none;
+}
+
+.contain {
+  display: block;
+}
+
+@keyframes anim {
+  0% {
+    right: 20px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+  .contain {
+    display: flex;
+  }
+  .big-image {
+    width: 100%;
+  }
+  .button:not(.small) {
+    display: none;
+  }
+
+  .button.small {
+    height: 405px;
+    display: block;
+  }
+
+  .bug {
+    display: block;
+    height: 60px;
+  }
 }

@@ -1,6 +1,6 @@
 .pop-up {
   position: fixed;
-  top: -50px;
+  top: -90px;
   left: 45%;
   background-color: rgb(228, 198, 153);
   border-radius: 10px;
@@ -8,6 +8,7 @@
   padding: 8px 20px 8px 20px;
   color: rgb(51, 51, 51);
   cursor: default;
+  z-index: 10;
 }
 
 .animate {

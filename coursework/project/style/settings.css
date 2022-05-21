@@ -45,3 +45,9 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 770px) {
+  body {
+    height: max(99vh, 100%);
+  }
+}

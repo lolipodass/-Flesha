@@ -62,3 +62,14 @@ main {
 .input:focus {
   border: 2px solid rgb(124, 138, 255);
 }
+
+body {
+  width: 100vw;
+  height: 99vh;
+}
+
+@media screen and (max-width: 770px) {
+  body {
+    height: max(99vh, 100%);
+  }
+}
