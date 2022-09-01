@@ -6,17 +6,19 @@
 int a = 5, b = 10;
 using namespace std;
 
-void da();
+void da(int);
+void da(int &);
 
 int main()
 {
-    da();
-    cout << a << " " << b;
+    da(1);
 }
 
-void da()
+void da(int b)
 {
-    int buf = a;
-    a = b;
-    b = buf;
+    cout << "1";
+}
+void da(int &b)
+{
+    cout << "2";
 }
