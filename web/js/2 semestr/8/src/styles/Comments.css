@@ -1,0 +1,131 @@
+#comment_form {
+  display: block;
+  width: 500px;
+  padding: 10px;
+}
+
+#comment_form .form_group {
+  margin-bottom: 10px;
+}
+
+#comment_form .form_group label {
+  font-size: 20px;
+}
+
+#comment_form .form_group input[type="text"],
+#comment_form .form_group input[type="email"],
+#comment_form .form_group input[type="date"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#comment_form input[type="submit"] {
+  display: inline-block;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 9px 22px;
+  font-size: 22px;
+  height: 50px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+  border-radius: 50px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#comment_form input[type="submit"]:hover {
+  box-shadow: 0 0 0 0.15rem #5ceace;
+}
+
+.comments {
+  padding: 10px;
+}
+
+.comments .comment {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #c4c4c4;
+  width: 500px;
+}
+
+.comment .comment_name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.comment .comment_email {
+  margin-bottom: 10px;
+}
+
+.comment .comment_text {
+  margin-bottom: 10px;
+}
+
+.comment .comment_date {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.comment #comment_delete {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #ff5252;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 26px;
+}
+
+.comment #comment_delete:hover {
+  background: #e4461b;
+  border-color: #e4461b;
+}
+
+.comment #comment_edit {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #bebebe;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 26px;
+}
+
+.comment #comment_edit:hover {
+  background: #e8e8e8;
+  color: #3d3d3d;
+}
+
+.comment #comment_show {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #4299e1;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 26px;
+}
+
+.comment #comment_show:hover {
+  background: darkgreen;
+}
